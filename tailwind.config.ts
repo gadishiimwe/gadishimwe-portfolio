@@ -61,7 +61,21 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Portfolio custom colors
+				'section-bg': 'hsl(var(--section-bg))',
+				'skill-bar': 'hsl(var(--skill-bar))',
+				'project-hover': 'hsl(var(--project-hover))',
+				'hero-start': 'hsl(var(--hero-gradient-start))',
+				'hero-end': 'hsl(var(--hero-gradient-end))'
+			},
+			backgroundImage: {
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-button': 'var(--gradient-button)'
+			},
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
