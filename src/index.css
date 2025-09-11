@@ -44,6 +44,7 @@
     --section-bg: 217 33% 8%;
     --skill-bar: 262 83% 58%;
     --project-hover: 217 32% 12%;
+    --primary-glow: 213 93% 67%;
 
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(var(--hero-gradient-start)), hsl(var(--hero-gradient-end)));
@@ -88,6 +89,7 @@
 @layer base {
   * {
     @apply border-border;
+    cursor: none !important;
   }
 
   body {
