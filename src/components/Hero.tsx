@@ -1,8 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 import profileImage from "@/assets/gad-profile.jpg";
+import { useTypewriter } from "@/hooks/use-typewriter";
 
 const Hero = () => {
+  const { displayText: nameText, isComplete: nameComplete } = useTypewriter({
+    text: "GAD ISHIMWE",
+    speed: 100,
+    delay: 500
+  });
+
+  const { displayText: titleText, isComplete: titleComplete } = useTypewriter({
+    text: "Young & Affordable Full-Stack Developer",
+    speed: 50,
+    delay: 2000
+  });
+
+  const { displayText: descText, isComplete: descComplete } = useTypewriter({
+    text: "I'm Gad ISHIMWE, a full-stack developer from Rwanda with 3 years of experience specializing in MERN stack development. I'm passionate about building modern digital experiences that blend beautiful design with powerful functionality — all at a budget-friendly cost. I create scalable solutions that make a real impact without breaking the bank.",
+    speed: 30,
+    delay: 4000
+  });
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -18,25 +37,24 @@ const Hero = () => {
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               Hi, I'm{" "}
               <span className="gradient-hero text-glow">
-                GAD ISHIMWE
+                {nameText}
+                {!nameComplete && <span className="animate-pulse">|</span>}
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground font-light">
-              Young & Affordable Full-Stack Developer
+            <p className="text-xl md:text-2xl text-muted-foreground font-light min-h-[3rem]">
+              {titleText}
+              {titleText && !titleComplete && <span className="animate-pulse">|</span>}
             </p>
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm <strong>Gad ISHIMWE</strong>, a full-stack developer from Rwanda with{" "}
-              <strong>3 years of experience</strong> specializing in MERN stack development. 
-              I'm passionate about building modern digital experiences that blend beautiful 
-              design with powerful functionality — all at a budget-friendly cost. I create 
-              scalable solutions that make a real impact without breaking the bank.
+            <p className="text-lg text-muted-foreground leading-relaxed min-h-[6rem]">
+              {descText}
+              {descText && !descComplete && <span className="animate-pulse">|</span>}
             </p>
           </div>
 
-          <div className="flex justify-center space-x-4">
+          <div className={`flex justify-center space-x-4 transition-opacity duration-500 ${descComplete ? 'opacity-100' : 'opacity-0'}`}>
             <Button
               size="lg"
               className="bg-card border border-border rounded-full p-3 hover:bg-project-hover transition-colors"
@@ -53,7 +71,7 @@ const Hero = () => {
             </Button>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+          <div className={`flex flex-col md:flex-row items-center justify-center gap-4 transition-opacity duration-500 ${descComplete ? 'opacity-100' : 'opacity-0'}`}>
             <Button
               variant="hero"
               size="xl"
