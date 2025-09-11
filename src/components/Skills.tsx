@@ -44,46 +44,47 @@ const Skills = () => {
   };
 
   const SkillBar = ({ name, level }: { name: string; level: number }) => (
-    <div className="space-y-2">
+    <div className="space-y-3">
       <div className="flex justify-between items-center">
-        <span className="text-sm font-medium">{name}</span>
-        <span className="text-sm text-muted-foreground">{level}%</span>
+        <span className="text-lg font-medium text-foreground">{name}</span>
+        <span className="text-lg font-bold text-primary">{level}%</span>
       </div>
-      <Progress value={level} className="h-2" />
+      <Progress value={level} className="h-3" />
     </div>
   );
 
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-20 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Technical Skills</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">
+            Technical <span className="gradient-hero">Skills</span>
+          </h2>
+          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Full-stack expertise from intuitive frontends to secure backends and intelligent systems
           </p>
         </div>
 
-        <Tabs defaultValue="frontend" className="max-w-4xl mx-auto">
-          <TabsList className="grid w-full grid-cols-5 mb-8">
-            <TabsTrigger value="frontend">Frontend</TabsTrigger>
-            <TabsTrigger value="backend">Backend</TabsTrigger>
-            <TabsTrigger value="database">Database & Tools</TabsTrigger>
-            <TabsTrigger value="emerging">Emerging Tech</TabsTrigger>
-            <TabsTrigger value="advanced">Advanced Skills</TabsTrigger>
+        <Tabs defaultValue="frontend" className="max-w-5xl mx-auto">
+          <TabsList className="grid w-full grid-cols-5 mb-12 bg-card/50 backdrop-blur-sm border border-border/50">
+            <TabsTrigger value="frontend" className="data-[state=active]:bg-primary data-[state=active]:text-white">Frontend</TabsTrigger>
+            <TabsTrigger value="backend" className="data-[state=active]:bg-primary data-[state=active]:text-white">Backend</TabsTrigger>
+            <TabsTrigger value="database" className="data-[state=active]:bg-primary data-[state=active]:text-white">Database & Tools</TabsTrigger>
+            <TabsTrigger value="emerging" className="data-[state=active]:bg-primary data-[state=active]:text-white">Emerging Tech</TabsTrigger>
+            <TabsTrigger value="advanced" className="data-[state=active]:bg-primary data-[state=active]:text-white">Advanced Skills</TabsTrigger>
           </TabsList>
 
           {Object.entries(skillCategories).map(([category, skills]) => (
             <TabsContent key={category} value={category}>
-              <div className="gradient-card p-8 rounded-xl shadow-card">
-                <div className="grid md:grid-cols-2 gap-6">
-                  {skills.map((skill, index) => (
-                    <SkillBar
-                      key={index}
-                      name={skill.name}
-                      level={skill.level}
-                    />
-                  ))}
-                </div>
+              <div className="grid md:grid-cols-2 gap-8">
+                {skills.map((skill, index) => (
+                  <SkillBar
+                    key={index}
+                    name={skill.name}
+                    level={skill.level}
+                  />
+                ))}
               </div>
             </TabsContent>
           ))}

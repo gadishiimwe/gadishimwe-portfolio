@@ -1,4 +1,4 @@
-import profileImage from "@/assets/gad-profile.jpg";
+import profileImage from "@/assets/gad-profile-new.jpg";
 import { Code, Database, Globe, Brain } from "lucide-react";
 
 const About = () => {
@@ -30,11 +30,11 @@ const About = () => {
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <div className="w-64 h-64 mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-card">
+            <div className="w-80 h-96 mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-card bg-gradient-card">
               <img
                 src={profileImage}
                 alt="Gad ISHIMWE - Full Stack Developer"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
               />
             </div>
             <div className="text-center lg:text-left">

@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
-import Experience from "@/components/Experience";
+import ProfessionalJourney from "@/components/ProfessionalJourney";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
@@ -17,7 +17,7 @@ const Index = () => {
       <About />
       <Skills />
       <Projects />
-      <Experience />
+      <ProfessionalJourney />
       <Contact />
       <Footer />
     </div>
