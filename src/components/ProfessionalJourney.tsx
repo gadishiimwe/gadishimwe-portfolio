@@ -3,50 +3,44 @@ import { MapPin, Building, Calendar } from "lucide-react";
 const ProfessionalJourney = () => {
   const experiences = [
     {
-      title: "Founder & Lead Developer",
-      company: "ViraX",
+      title: "Full-Stack Developer (Freelance & Personal Projects)",
+      company: "Remote",
       location: "Remote",
       period: "2022 - Present",
       type: "Current",
-      description: "Leading development initiatives and building solutions that matter",
+      description: "Building and deploying web applications using React, Node.js, PHP, and MySQL. Focused on practical projects that solve real-world problems and improve user experience.",
       achievements: [
-        "Established startup development company with worldwide clients",
-        "Built multiple successful web applications and platforms",
-        "Specialized in modern tech stack including React and Node.js",
-        "Developed car rentals, school systems, and news portals",
-        "Implemented secure authentication and payment systems"
+        "Developed 7+ full-stack applications including car rental, student management, news portal, hospital management, and visitor tracking systems.",
+        "Deployed projects on Vercel, Netlify, and Heroku with live demos.",
+        "Implemented secure authentication, CRUD operations, and responsive design.",
+        "Collaborated via GitHub and shared work with public repositories."
       ]
     },
     {
-      title: "Full-Stack Developer",
-      company: "Freelance Projects",
-      location: "Remote",
-      period: "2021 - Present",
-      type: "Ongoing",
-      description: "Contributing solutions with applications for clients, focusing on React, Node.js databases, APIs, and modern tech stack",
-      achievements: [
-        "Built robust web applications with React and Express",
-        "Integrated MySQL and MongoDB for data management",
-        "Created responsive designs with Tailwind CSS",
-        "Developed RESTful APIs and third-party integrations",
-        "Implemented modern authentication and payment systems",
-        "Optimized performance for large-scale applications"
-      ]
-    },
-    {
-      title: "Web Developer",
-      company: "Various Projects",
+      title: "Web Developer (Learning & Freelance Work)",
+      company: "Rwanda",
       location: "Rwanda",
       period: "2021 - 2022",
-      type: "Contract",
-      description: "Developed professional portfolio building, specialized website development, UI design, front-end building. Also worked with WordPress, CSS development",
+      type: "Freelance",
+      description: "Gained practical experience building websites and small applications while completing online certifications and practicing coding fundamentals.",
       achievements: [
-        "Built professional portfolios and business websites",
-        "Specialized in WordPress theme development and customization",
-        "Created responsive designs with modern CSS techniques",
-        "Collaborated with clients to deliver pixel-perfect designs",
-        "Optimized websites for performance and SEO",
-        "Gained extensive experience in client communication"
+        "Built personal and client websites using WordPress, HTML, CSS, and PHP.",
+        "Learned MySQL database design and integrated CRUD operations.",
+        "Delivered responsive, user-friendly designs for local clients.",
+        "Completed multiple certifications (FreeCodeCamp, Udacity, Edureka)."
+      ]
+    },
+    {
+      title: "Self-Learner (Programming Foundations)",
+      company: "Rwanda",
+      location: "Rwanda",
+      period: "2020 - 2021",
+      type: "Learning",
+      description: "Focused on mastering programming basics, algorithms, and web development through structured online learning.",
+      achievements: [
+        "Earned certifications in Web Design, Programming, and AI fundamentals.",
+        "Completed foundational projects including calculators, portfolio websites, and simple apps.",
+        "Ranked Top 20% in Software Development coursework at Glory Academy."
       ]
     }
   ];
@@ -60,7 +54,7 @@ const ProfessionalJourney = () => {
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            From self-taught developer to tech entrepreneur - building solutions that matter
+            From self-taught learner to full-stack developer — building projects that solve real problems
           </p>
         </div>
 
@@ -85,7 +79,8 @@ const ProfessionalJourney = () => {
                     <div className="flex items-center justify-between mb-4">
                       <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                         experience.type === 'Current' ? 'bg-primary text-white' :
-                        experience.type === 'Ongoing' ? 'bg-accent text-white' :
+                        experience.type === 'Freelance' ? 'bg-accent text-white' :
+                        experience.type === 'Learning' ? 'bg-secondary text-foreground' :
                         'bg-secondary text-foreground'
                       }`}>
                         {experience.type}
