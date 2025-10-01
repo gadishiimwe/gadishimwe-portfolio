@@ -11,13 +11,13 @@ const Hero = () => {
   });
 
   const { displayText: titleText, isComplete: titleComplete } = useTypewriter({
-    text: "Young & Affordable Full-Stack Developer",
+    text: "Full-Stack Developer | React • Node.js • PHP • MySQL",
     speed: 50,
     delay: 2000
   });
 
   const { displayText: descText, isComplete: descComplete } = useTypewriter({
-    text: "I'm Gad ISHIMWE, a full-stack developer from Rwanda with 3 years of experience specializing in MERN stack development. I'm passionate about building modern digital experiences that blend beautiful design with powerful functionality — all at a budget-friendly cost. I create scalable solutions that make a real impact without breaking the bank.",
+    text: "I'm a junior full-stack developer from Rwanda with hands-on experience building and deploying real-world applications. I've completed 7+ projects, including chatbots, management systems, and dynamic platforms. I love solving problems through clean, scalable code and I'm eager to contribute to remote teams worldwide.",
     speed: 30,
     delay: 4000
   });

@@ -6,66 +6,58 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "Apartment Visitor Management System (AVMS)",
-      description: "A PHP-based system to manage apartment visitors securely. Includes check-in/check-out, visitor logs, admin panel, and report generation with PDF export functionality.",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500&h=300&fit=crop",
-      technologies: ["PHP", "MySQL", "Bootstrap", "CRUD", "PDF Export"],
+      title: "GadBot",
+      description: "AI chatbot built with React & Node.js, deployed on Vercel.",
+      image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=500&h=300&fit=crop",
+      technologies: ["React", "Node.js", "AI API", "Vercel"],
       liveUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "Hospital Management System",
-      description: "Complete hospital web application to manage patients, staff, appointments, billing, and medical reports with comprehensive admin dashboard and authentication.",
-      image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=500&h=300&fit=crop",
-      technologies: ["PHP", "MySQL", "Admin Dashboard", "Authentication"],
+      title: "GadVoiceAI",
+      description: "Speech-to-text web app using Web Speech API.",
+      image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?w=500&h=300&fit=crop",
+      technologies: ["React", "Web Speech API", "JavaScript"],
       liveUrl: "#",
       githubUrl: "#"
     },
     {
       title: "Student Management System",
-      description: "Comprehensive school management platform that tracks students, grades, attendance, parent information, and classroom data with secure authentication and responsive admin portal.",
+      description: "Full-stack CRUD app with authentication and MySQL.",
       image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500&h=300&fit=crop",
-      technologies: ["React", "Express.js", "MySQL", "Secure Auth", "Admin Portal"],
+      technologies: ["React", "Node.js", "MySQL", "Authentication"],
       liveUrl: "#",
       githubUrl: "#"
     },
     {
       title: "News Portal",
-      description: "Dynamic Laravel-based content management system for posting news, categorizing content, managing user comments, and providing interactive user experience.",
+      description: "Dynamic CMS with admin panel and responsive design.",
       image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=500&h=300&fit=crop",
-      technologies: ["Laravel", "PHP", "MySQL", "Admin Panel", "User Interaction"],
+      technologies: ["PHP", "MySQL", "CMS", "Admin Panel"],
       liveUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "Car Rental Platform – Mufasa Business Group",
-      description: "Full-stack car rental platform with booking management, user authentication, and payment processing. Built for Mufasa Business Group with modern UI and secure backend.",
+      title: "Hospital Management System",
+      description: "PHP-based system managing patients, doctors, and appointments.",
+      image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=500&h=300&fit=crop",
+      technologies: ["PHP", "MySQL", "CRUD", "Admin Dashboard"],
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      title: "Car Rental System",
+      description: "Rental booking platform with authentication and SQL database.",
       image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=500&h=300&fit=crop",
-      technologies: ["React", "Node.js", "Express", "MySQL", "Authentication", "Booking Logic"],
+      technologies: ["React", "Node.js", "MySQL", "Booking System"],
       liveUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "UNITED CHRISTIAN CHURCH Website",
-      description: "Modern church website with event calendar, sermon video streaming, member dashboard, and integrated donation system featuring responsive design and content management.",
-      image: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=500&h=300&fit=crop",
-      technologies: ["ReactJS", "NodeJS", "MySQL", "Custom Theme"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "EchoX – The Super App",
-      description: "All-in-One digital platform combining social interaction, news feeds, payment systems, and multiple services in a single comprehensive application with modern UI.",
-      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&h=300&fit=crop",
-      technologies: ["React", "Node.js", "MongoDB", "Firebase", "Payment Integration"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Investment Solutions Platform",
-      description: "Financial platform for investment tracking, portfolio management, and market analysis with real-time data integration and secure transactions.",
-      image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=500&h=300&fit=crop",
-      technologies: ["React", "Express", "MySQL", "Financial APIs", "Charts"],
+      title: "AVMS",
+      description: "Apartment Visitor Management System for secure visitor logging.",
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500&h=300&fit=crop",
+      technologies: ["PHP", "MySQL", "Authentication", "Logs"],
       liveUrl: "#",
       githubUrl: "#"
     }
@@ -77,7 +69,7 @@ const Projects = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Real-world applications solving business problems across various industries
+            7+ real-world projects including chatbots, management systems, and dynamic platforms
           </p>
         </div>
 

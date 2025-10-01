@@ -6,22 +6,22 @@ const About = () => {
     {
       icon: Code,
       title: "Full-Stack Development",
-      description: "Building complete web applications from React frontends to Express/Laravel backends"
+      description: "React frontends + Node.js/PHP backends for complete web applications"
     },
     {
       icon: Database,
-      title: "Database & CRUD",
-      description: "Expert in MySQL with full CRUD operations and secure data management"
+      title: "Database & CRUD Systems",
+      description: "MySQL, SQL, authentication, and secure data management"
     },
     {
       icon: Globe,
-      title: "Digital Solutions",
-      description: "Creating real-world applications including car rentals, school systems, and news portals"
+      title: "Real-World Apps",
+      description: "School, hospital, rental, and visitor management systems"
     },
     {
       icon: Brain,
-      title: "Emerging Technologies",
-      description: "Exploring AI integration, blockchain, and machine learning for future-ready solutions"
+      title: "Emerging Tech",
+      description: "Exploring AI APIs and modern deployment tools"
     }
   ];
 
@@ -46,25 +46,17 @@ const About = () => {
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold">About Me</h3>
               <p className="text-muted-foreground leading-relaxed">
-                I'm <strong>Gad ISHIMWE</strong>, a full-stack developer from Rwanda with{" "}
-                <strong>3 years of experience</strong> crafting digital solutions that matter. 
-                As the founder of <strong>ViraX</strong>, I focus on building responsive, 
-                user-friendly web applications that solve real problems and bring ideas to life.
+                I'm Gad Ishimwe, a full-stack developer passionate about creating functional and user-friendly 
+                web applications. I specialize in React, Node.js, PHP, and MySQL with additional experience 
+                deploying apps on Vercel, Netlify, and Heroku.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Over the past 3 years, I've specialized in the MERN stack (MongoDB, Express, React, Node.js) 
-                and MySQL, with extensive experience in tools like WordPress, Firebase, Tailwind CSS, and 
-                emerging technologies like AI integration and blockchain. From backend APIs to front-end design, 
-                I enjoy building systems that are both powerful and easy to use.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Throughout my 3-year journey, I've successfully delivered projects like car rental platforms, 
-                school and church websites, investment systems, and modern news portals. Each line of code I 
-                write is aimed at delivering impact, performance, and real-world value.
+                Over the past 2+ years of self-learning and project building, I've developed applications like 
+                GadBot (AI chatbot), Student Management System, News Portal, Car Rental Platform, and Hospital 
+                Management System.
               </p>
               <p className="text-muted-foreground font-semibold">
-                <strong>Always learning, always building</strong> — I'm committed to pushing boundaries 
-                and growing as a developer every day.
+                I focus on building real-world applications that solve actual problems with clean, scalable code.
               </p>
             </div>
           </div>

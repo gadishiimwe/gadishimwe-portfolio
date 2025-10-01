@@ -4,42 +4,27 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const Skills = () => {
   const skillCategories = {
     frontend: [
-      { name: "React.js", level: 95 },
-      { name: "JavaScript (ES6+)", level: 98 },
-      { name: "HTML5", level: 98 },
-      { name: "CSS3", level: 95 },
-      { name: "Tailwind CSS", level: 93 },
-      { name: "Bootstrap", level: 92 },
-      { name: "Sass", level: 91 },
-      { name: "WordPress", level: 92 },
+      { name: "ReactJS", level: 90 },
+      { name: "JavaScript (ES6+)", level: 88 },
+      { name: "HTML5", level: 95 },
+      { name: "CSS3", level: 92 },
+      { name: "Tailwind CSS", level: 85 },
     ],
     backend: [
-      { name: "Node.js", level: 90 },
-      { name: "Express.js", level: 88 },
-      { name: "Laravel", level: 85 },
-      { name: "PHP", level: 87 },
-      { name: "REST APIs", level: 92 },
-      { name: "Authentication", level: 89 },
+      { name: "Node.js", level: 85 },
+      { name: "PHP", level: 80 },
+      { name: "Express", level: 82 },
     ],
     database: [
-      { name: "MySQL", level: 90 },
-      { name: "MongoDB", level: 88 },
-      { name: "Firebase", level: 85 },
-      { name: "Database Design", level: 87 },
-      { name: "CRUD Operations", level: 95 },
+      { name: "MySQL", level: 88 },
+      { name: "SQL basics", level: 85 },
     ],
-    emerging: [
-      { name: "AI Integration", level: 75 },
-      { name: "Blockchain", level: 70 },
-      { name: "Machine Learning", level: 65 },
-      { name: "Cloud Services", level: 80 },
-    ],
-    advanced: [
-      { name: "Git & GitHub", level: 95 },
-      { name: "Project Management", level: 88 },
-      { name: "UI/UX Design", level: 85 },
-      { name: "Payment Integration", level: 82 },
-      { name: "Performance Optimization", level: 86 },
+    tools: [
+      { name: "Git/GitHub", level: 90 },
+      { name: "REST APIs", level: 85 },
+      { name: "Vercel", level: 80 },
+      { name: "Netlify", level: 80 },
+      { name: "Heroku", level: 75 },
     ]
   };
 
@@ -62,17 +47,16 @@ const Skills = () => {
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Full-stack expertise from intuitive frontends to secure backends and intelligent systems
+            Technologies I work with to build modern web applications
           </p>
         </div>
 
         <Tabs defaultValue="frontend" className="max-w-5xl mx-auto">
-          <TabsList className="grid w-full grid-cols-5 mb-12 bg-card/50 backdrop-blur-sm border border-border/50">
+          <TabsList className="grid w-full grid-cols-4 mb-12 bg-card/50 backdrop-blur-sm border border-border/50">
             <TabsTrigger value="frontend" className="data-[state=active]:bg-primary data-[state=active]:text-white">Frontend</TabsTrigger>
             <TabsTrigger value="backend" className="data-[state=active]:bg-primary data-[state=active]:text-white">Backend</TabsTrigger>
-            <TabsTrigger value="database" className="data-[state=active]:bg-primary data-[state=active]:text-white">Database & Tools</TabsTrigger>
-            <TabsTrigger value="emerging" className="data-[state=active]:bg-primary data-[state=active]:text-white">Emerging Tech</TabsTrigger>
-            <TabsTrigger value="advanced" className="data-[state=active]:bg-primary data-[state=active]:text-white">Advanced Skills</TabsTrigger>
+            <TabsTrigger value="database" className="data-[state=active]:bg-primary data-[state=active]:text-white">Databases</TabsTrigger>
+            <TabsTrigger value="tools" className="data-[state=active]:bg-primary data-[state=active]:text-white">Other Tools</TabsTrigger>
           </TabsList>
 
           {Object.entries(skillCategories).map(([category, skills]) => (
