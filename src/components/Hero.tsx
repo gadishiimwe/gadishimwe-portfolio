@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 import profileImage from "@/assets/gad-profile.jpg";
 import { useTypewriter } from "@/hooks/use-typewriter";
+import CVRequestDialog from "@/components/CVRequestDialog";
 
 const Hero = () => {
+  const [cvDialogOpen, setCvDialogOpen] = useState(false);
   const { displayText: titleText, isComplete: titleComplete } = useTypewriter({
     text: "Full-Stack Developer | React • Node.js • PHP • MySQL",
     speed: 50,
@@ -72,6 +75,7 @@ const Hero = () => {
               variant="hero-outline"
               size="xl"
               className="min-w-[200px]"
+              onClick={() => setCvDialogOpen(true)}
             >
               <Mail className="w-5 h-5 mr-2" />
               Request Resume
@@ -90,6 +94,8 @@ const Hero = () => {
           <ArrowDown className="w-6 h-6" />
         </Button>
       </div>
+
+      <CVRequestDialog open={cvDialogOpen} onOpenChange={setCvDialogOpen} />
     </section>
   );
 };

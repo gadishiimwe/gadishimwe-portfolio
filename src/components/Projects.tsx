@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
+import studentManagementImage from "@/assets/student-management-system.jpg";
 
 const Projects = () => {
   const projects = [
@@ -24,7 +25,7 @@ const Projects = () => {
     {
       title: "Student Management System",
       description: "Full-stack CRUD app with authentication and MySQL.",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500&h=300&fit=crop",
+      image: studentManagementImage,
       technologies: ["React", "Node.js", "MySQL", "Authentication"],
       liveUrl: "#",
       githubUrl: "#"
