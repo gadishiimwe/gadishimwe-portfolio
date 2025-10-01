@@ -4,22 +4,10 @@ import profileImage from "@/assets/gad-profile.jpg";
 import { useTypewriter } from "@/hooks/use-typewriter";
 
 const Hero = () => {
-  const { displayText: nameText, isComplete: nameComplete } = useTypewriter({
-    text: "GAD ISHIMWE",
-    speed: 100,
-    delay: 500
-  });
-
   const { displayText: titleText, isComplete: titleComplete } = useTypewriter({
     text: "Full-Stack Developer | React • Node.js • PHP • MySQL",
     speed: 50,
-    delay: 2000
-  });
-
-  const { displayText: descText, isComplete: descComplete } = useTypewriter({
-    text: "I'm a junior full-stack developer from Rwanda with hands-on experience building and deploying real-world applications. I've completed 7+ projects, including chatbots, management systems, and dynamic platforms. I love solving problems through clean, scalable code and I'm eager to contribute to remote teams worldwide.",
-    speed: 30,
-    delay: 4000
+    delay: 1000
   });
 
   const scrollToSection = (sectionId: string) => {
@@ -37,24 +25,24 @@ const Hero = () => {
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               Hi, I'm{" "}
               <span className="gradient-hero text-glow">
-                {nameText}
-                {!nameComplete && <span className="animate-pulse">|</span>}
+                GAD ISHIMWE
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground font-light min-h-[3rem]">
-              {titleText}
-              {titleText && !titleComplete && <span className="animate-pulse">|</span>}
-            </p>
+            <div className="text-xl md:text-2xl text-muted-foreground font-light min-h-[3rem]">
+              <span className="font-mono">
+                {titleText}
+                {!titleComplete && <span className="animate-pulse">|</span>}
+              </span>
+            </div>
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <p className="text-lg text-muted-foreground leading-relaxed min-h-[6rem]">
-              {descText}
-              {descText && !descComplete && <span className="animate-pulse">|</span>}
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              I'm a junior full-stack developer from Rwanda with hands-on experience building and deploying real-world applications. I've completed 7+ projects, including chatbots, management systems, and dynamic platforms. I love solving problems through clean, scalable code and I'm eager to contribute to remote teams worldwide.
             </p>
           </div>
 
-          <div className={`flex justify-center space-x-4 transition-opacity duration-500 ${descComplete ? 'opacity-100' : 'opacity-0'}`}>
+          <div className={`flex justify-center space-x-4 transition-opacity duration-500 ${titleComplete ? 'opacity-100' : 'opacity-0'}`}>
             <Button
               size="lg"
               className="bg-card border border-border rounded-full p-3 hover:bg-project-hover transition-colors"
@@ -71,7 +59,7 @@ const Hero = () => {
             </Button>
           </div>
 
-          <div className={`flex flex-col md:flex-row items-center justify-center gap-4 transition-opacity duration-500 ${descComplete ? 'opacity-100' : 'opacity-0'}`}>
+          <div className={`flex flex-col md:flex-row items-center justify-center gap-4 transition-opacity duration-500 ${titleComplete ? 'opacity-100' : 'opacity-0'}`}>
             <Button
               variant="hero"
               size="xl"
