@@ -5,7 +5,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, MapPin, Mail, Github, Linkedin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -25,32 +24,25 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const { error } = await supabase.functions.invoke('send-contact-email', {
-        body: formData
-      });
-
-      if (error) throw error;
-
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for your message. I'll get back to you soon!",
-      });
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch (error) {
-      console.error('Error sending message:', error);
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again or contact me directly via email.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    
+    // Create mailto link with form data
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    const mailtoLink = `mailto:gadyishimwe1@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    toast({
+      title: "Opening Email Client",
+      description: "Your default email client will open with the message pre-filled.",
+    });
+    
+    setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
   const contactInfo = [
@@ -220,10 +212,9 @@ const Contact = () => {
                   variant="hero"
                   size="lg"
                   className="w-full"
-                  disabled={isSubmitting}
                 >
                   <Send className="w-5 h-5 mr-2" />
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  Send Message
                 </Button>
               </form>
             </CardContent>
