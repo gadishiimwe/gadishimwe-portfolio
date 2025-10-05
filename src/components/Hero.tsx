@@ -50,15 +50,21 @@ const Hero = () => {
               size="lg"
               className="bg-card border border-border rounded-full p-3 hover:bg-project-hover transition-colors"
               variant="ghost"
+              asChild
             >
-              <Github className="w-6 h-6" />
+              <a href="https://github.com/gadishiimwe" target="_blank" rel="noopener noreferrer">
+                <Github className="w-6 h-6" />
+              </a>
             </Button>
             <Button
               size="lg"
               className="bg-card border border-border rounded-full p-3 hover:bg-project-hover transition-colors"
               variant="ghost"
+              asChild
             >
-              <Linkedin className="w-6 h-6" />
+              <a href="https://www.linkedin.com/in/gad-ishimwe/" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="w-6 h-6" />
+              </a>
             </Button>
           </div>
 
