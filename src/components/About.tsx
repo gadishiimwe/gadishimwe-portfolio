@@ -43,7 +43,7 @@ const About = () => {
                 <img
                   src={profileImage}
                   alt="Gad ISHIMWE - Full Stack Developer"
-                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
                 />
               </div>
             </div>
@@ -57,8 +57,8 @@ const About = () => {
           <div className="space-y-6 lg:pt-8">
             <div className="space-y-4">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm Gad Ishimwe, a <span className="font-semibold text-foreground">full-stack developer</span> passionate about creating functional and user-friendly 
-                web applications. I specialize in <span className="text-primary font-medium">React, Node.js, PHP, and MySQL</span> with additional experience 
+                I'm Gad Ishimwe, a <span className="font-semibold text-foreground">full-stack developer from Rwanda</span> passionate about creating functional and user-friendly
+                web applications. As a skilled web developer in Rwanda, I specialize in <span className="text-primary font-medium">React, Node.js, PHP, and MySQL</span> with additional experience
                 deploying apps on Vercel, Netlify, and Heroku.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
