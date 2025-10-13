@@ -1,14 +1,8 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
+# Robots.txt for gadishimwe.com
+# Allow all crawlers full access to the site
 
 User-agent: *
 Allow: /
+
+# Sitemap location
+Sitemap: https://gadishimwe.com/sitemap.xml
