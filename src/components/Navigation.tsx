@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
@@ -28,7 +29,7 @@ const Navigation = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <div className="text-2xl font-bold gradient-hero">GAD.</div>
+        <Link to="/" className="text-2xl font-bold gradient-hero hover:opacity-80 transition-opacity">GAD.</Link>
         
         <div className="hidden md:flex items-center space-x-8">
           <button
