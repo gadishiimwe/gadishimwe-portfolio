@@ -4,6 +4,10 @@ import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 import profileImage from "@/assets/gad-profile.jpg";
 import { useTypewriter } from "@/hooks/use-typewriter";
 import CVRequestDialog from "@/components/CVRequestDialog";
+import TextType from "./TextType";
+import ScrollFloat from "./ScrollFloat";
+import ProfileCard from "./ProfileCard";
+import TextPressure from "./TextPressure";
 
 const Hero = () => {
   const [cvDialogOpen, setCvDialogOpen] = useState(false);
@@ -21,7 +25,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-6 relative">
+    <section id="home" className="min-h-screen flex items-center justify-center px-6 pt-20 md:pt-0 relative">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center space-y-8">
           <div className="space-y-4">
@@ -32,10 +36,13 @@ const Hero = () => {
               </span>
             </h1>
             <div className="text-xl md:text-2xl text-muted-foreground font-light min-h-[3rem]">
-              <span className="font-mono">
-                {titleText}
-                {!titleComplete && <span className="animate-pulse">|</span>}
-              </span>
+              <TextType
+                text={["Full-Stack Developer | React • Node.js • PHP • MySQL", "Passionate Coder", "Problem Solver", "Tech Enthusiast"]}
+                typingSpeed={75}
+                pauseDuration={1500}
+                showCursor={true}
+                cursorCharacter="|"
+              />
             </div>
           </div>
 
@@ -44,6 +51,8 @@ const Hero = () => {
               I'm a Full-stack developer from Rwanda with hands-on experience building and deploying real-world applications. As a skilled web developer in Rwanda, I've completed 7+ projects, including chatbots, management systems, and dynamic platforms. I love solving problems through clean, scalable code and I'm eager to contribute to remote teams worldwide.
             </p>
           </div>
+
+
 
           <div className={`flex justify-center space-x-4 transition-opacity duration-500 ${titleComplete ? 'opacity-100' : 'opacity-0'}`}>
             <Button
