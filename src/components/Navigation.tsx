@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,7 +33,7 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link to="/" className="text-2xl font-bold gradient-hero hover:opacity-80 transition-opacity">GAD.</Link>
-        
+
         <div className="hidden md:flex items-center space-x-8">
           <button
             onClick={() => scrollToSection("home")}
@@ -69,6 +72,72 @@ const Navigation = () => {
             Contact
           </button>
         </div>
+
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" className="md:hidden">
+              <Menu className="h-6 w-6" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+            <nav className="flex flex-col space-y-4 mt-8">
+              <button
+                onClick={() => {
+                  scrollToSection("home");
+                  setIsOpen(false);
+                }}
+                className="text-left text-foreground hover:text-primary transition-colors"
+              >
+                Home
+              </button>
+              <button
+                onClick={() => {
+                  scrollToSection("about");
+                  setIsOpen(false);
+                }}
+                className="text-left text-foreground hover:text-primary transition-colors"
+              >
+                About
+              </button>
+              <button
+                onClick={() => {
+                  scrollToSection("skills");
+                  setIsOpen(false);
+                }}
+                className="text-left text-foreground hover:text-primary transition-colors"
+              >
+                Skills
+              </button>
+              <button
+                onClick={() => {
+                  scrollToSection("projects");
+                  setIsOpen(false);
+                }}
+                className="text-left text-foreground hover:text-primary transition-colors"
+              >
+                Projects
+              </button>
+              <button
+                onClick={() => {
+                  scrollToSection("experience");
+                  setIsOpen(false);
+                }}
+                className="text-left text-foreground hover:text-primary transition-colors"
+              >
+                Experience
+              </button>
+              <button
+                onClick={() => {
+                  scrollToSection("contact");
+                  setIsOpen(false);
+                }}
+                className="text-left text-foreground hover:text-primary transition-colors"
+              >
+                Contact
+              </button>
+            </nav>
+          </SheetContent>
+        </Sheet>
       </div>
     </nav>
   );
