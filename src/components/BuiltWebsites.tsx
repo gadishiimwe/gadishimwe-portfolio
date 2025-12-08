@@ -27,9 +27,19 @@ const BuiltWebsites = () => {
       liveUrl: "https://www.boho.rw/",
       category: "Restaurant"
     },
+
+    {
+      id: "delta-2-construction",
+      title: "Delta 2 Construction Company",
+      description: "Professional construction company website showcasing services, projects, and contact information.",
+      image: "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzLf875WoFBz8bpK1Z_6gQwKxzzl4ib8dqVIcHvDnFi-2VZJVhGeF_CAt5j1be6NlY-fjGv32Zmo2mXJakyN0xvl3J0dCd5ecNHgYqtckn4UzvneyeWSnznwh1povmC4Jk94ZA=s680-w680-h510-rw",
+      technologies: ["React", "Responsive Design"],
+      liveUrl: "https://delta2constract.vercel.app/",
+      category: "Construction"
+    },
+
     
-    
-    
+
   ];
 
   return (
