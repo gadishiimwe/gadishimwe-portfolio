@@ -40,7 +40,7 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-5xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
             Technical <span className="gradient-hero">Skills</span>
