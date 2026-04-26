@@ -22,7 +22,7 @@ const BuiltWebsites = () => {
       id: "restaurant-website",
       title: "BOHO Restaurant",
       description: "Elegant restaurant website with menu display, reservations, and online ordering.",
-      image: "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwE9gYq9MbXODyxw4MjgzXUvwl0T7Un23D5c5MBulInolDvVjbLU1s9XAJ3PKqpWzxIBYZP8QxNHFKUutKMJnlAD3wOeSrE7hmYpNNw0J0PbwoQYJzZseKCLHu6Pz6dNObh8S49=s680-w680-h510-rw",
+      image: "https://i.pinimg.com/1200x/13/ad/cf/13adcf049ed52cd296a5812f5a3990c4.jpg",
       technologies: ["React", "Node.js", "Payment Integration", "CMS"],
       liveUrl: "https://www.boho.rw/",
       category: "Restaurant"
@@ -32,7 +32,7 @@ const BuiltWebsites = () => {
       id: "delta-2-construction",
       title: "Delta 2 Construction Company",
       description: "Professional construction company website showcasing services, projects, and contact information.",
-      image: "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzLf875WoFBz8bpK1Z_6gQwKxzzl4ib8dqVIcHvDnFi-2VZJVhGeF_CAt5j1be6NlY-fjGv32Zmo2mXJakyN0xvl3J0dCd5ecNHgYqtckn4UzvneyeWSnznwh1povmC4Jk94ZA=s680-w680-h510-rw",
+      image: "https://i.pinimg.com/736x/c2/69/37/c26937ce4494cc153173138fd70d6cd1.jpg",
       technologies: ["React", "Responsive Design"],
       liveUrl: "https://delta2constract.vercel.app/",
       category: "Construction"
