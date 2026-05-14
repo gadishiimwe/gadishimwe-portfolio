@@ -22,7 +22,7 @@ const BuiltWebsites = () => {
   id: "zavora-safaris-website",
   title: "Zavora Safaris Africa LTD",
   description: "Luxury Rwanda & East Africa safari website featuring gorilla trekking, safari tours, hotels, meetings & events, car hire, online bookings, and a full admin management system.",
-  image: "https://kommodo.ai/i/f3YghPqi2ZsFFqlH3F9X",
+  image: "https://kommodo.ai/i/d46ZBYKsdCLAkAKWpPW3",
   technologies: ["React", "TypeScript", "Supabase", "Tailwind CSS", "Vercel"],
   liveUrl: "https://zavorasafaris.com",
   category: "Travel & Tourism"
