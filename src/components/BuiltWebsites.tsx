@@ -19,14 +19,14 @@ const BuiltWebsites = () => {
       category: "Spa & Wellness"
     },
     {
-      id: "restaurant-website",
-      title: "BOHO Restaurant",
-      description: "Elegant restaurant website with menu display, reservations, and online ordering.",
-      image: "https://i.pinimg.com/1200x/13/ad/cf/13adcf049ed52cd296a5812f5a3990c4.jpg",
-      technologies: ["React", "Node.js", "Payment Integration", "CMS"],
-      liveUrl: "https://www.boho.rw/",
-      category: "Restaurant"
-    },
+  id: "zavora-safaris-website",
+  title: "Zavora Safaris Africa LTD",
+  description: "Luxury Rwanda & East Africa safari website featuring gorilla trekking, safari tours, hotels, meetings & events, car hire, online bookings, and a full admin management system.",
+  image: "https://kommodo.ai/i/f3YghPqi2ZsFFqlH3F9X",
+  technologies: ["React", "TypeScript", "Supabase", "Tailwind CSS", "Vercel"],
+  liveUrl: "https://zavorasafaris.com",
+  category: "Travel & Tourism"
+},
 
     {
       id: "delta-2-construction",
