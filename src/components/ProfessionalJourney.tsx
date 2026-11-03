@@ -78,8 +78,8 @@ const ProfessionalJourney = () => {
                   <div className="gradient-card p-6 rounded-xl shadow-card border border-border/50 backdrop-blur-sm">
                     <div className="flex items-center justify-between mb-4">
                       <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                        experience.type === 'Current' ? 'bg-primary text-white' :
-                        experience.type === 'Freelance' ? 'bg-accent text-white' :
+                        experience.type === 'Current' ? 'bg-primary text-primary-foreground' :
+                        experience.type === 'Freelance' ? 'bg-accent text-primary-foreground' :
                         experience.type === 'Learning' ? 'bg-secondary text-foreground' :
                         'bg-secondary text-foreground'
                       }`}>

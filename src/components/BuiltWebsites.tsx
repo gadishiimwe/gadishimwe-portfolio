@@ -60,7 +60,7 @@ const BuiltWebsites = () => {
             >
               <div className="absolute top-4 right-4 z-10">
                 <div className="bg-primary/90 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Sparkles className="w-4 h-4 text-white" />
+                  <Sparkles className="w-4 h-4 text-primary-foreground" />
                 </div>
               </div>
               <div className="aspect-video overflow-hidden relative">
@@ -87,7 +87,7 @@ const BuiltWebsites = () => {
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute top-4 left-4 z-10">
-                  <Badge variant="secondary" className="bg-black/70 text-white border-0">
+                  <Badge variant="secondary" className="bg-foreground/80 text-primary-foreground border-0">
                     {website.category}
                   </Badge>
                 </div>
@@ -104,7 +104,7 @@ const BuiltWebsites = () => {
                     <Badge
                       key={techIndex}
                       variant="secondary"
-                      className="text-xs hover:bg-primary hover:text-white transition-colors duration-200"
+                      className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
                     >
                       {tech}
                     </Badge>

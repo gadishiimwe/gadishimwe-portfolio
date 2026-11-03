@@ -335,7 +335,7 @@ const ProjectDetail = () => {
               {project.technologies.map((tech, index) => {
                 const IconComponent = getTechIcon(tech);
                 return (
-                  <Badge key={index} variant="secondary" className="px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200 hover:scale-105">
+                  <Badge key={index} variant="secondary" className="px-4 py-2 hover:bg-primary hover:text-primary-foreground transition-all duration-200 hover:scale-105">
                     <IconComponent className="w-3 h-3 mr-2" />
                     {tech}
                   </Badge>
@@ -352,7 +352,7 @@ const ProjectDetail = () => {
                   </a>
                 </Button>
               )}
-              <Button size="lg" variant="outline" className="hover:scale-105 transition-all duration-200 hover:bg-primary hover:text-white hover:border-primary shadow-lg hover:shadow-xl" asChild>
+              <Button size="lg" variant="outline" className="hover:scale-105 transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:border-primary shadow-lg hover:shadow-xl" asChild>
                 <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                   <Github className="w-5 h-5 mr-2" />
                   View Source Code
@@ -426,7 +426,7 @@ const ProjectDetail = () => {
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                        <div className="p-4 text-white">
+                        <div className="p-4 text-primary-foreground">
                           <p className="text-sm font-medium">Screenshot {index + 1}</p>
                         </div>
                       </div>

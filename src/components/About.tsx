@@ -83,7 +83,7 @@ const About = () => {
                 className="gradient-card p-6 rounded-xl shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-2"
               >
                 <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                  <service.icon className="w-6 h-6 text-white" />
+                  <service.icon className="w-6 h-6 text-primary-foreground" />
                 </div>
                 <h4 className="text-lg font-semibold mb-2">{service.title}</h4>
                 <p className="text-muted-foreground text-sm">{service.description}</p>

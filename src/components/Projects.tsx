@@ -90,7 +90,7 @@ const Projects = () => {
             >
               <div className="absolute top-4 right-4 z-10">
                 <div className="bg-primary/90 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Sparkles className="w-4 h-4 text-white" />
+                  <Sparkles className="w-4 h-4 text-primary-foreground" />
                 </div>
               </div>
               <div className="aspect-video overflow-hidden relative">
@@ -129,7 +129,7 @@ const Projects = () => {
                     <Badge
                       key={techIndex}
                       variant="secondary"
-                      className="text-xs hover:bg-primary hover:text-white transition-colors duration-200"
+                      className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
                     >
                       {tech}
                     </Badge>
@@ -152,7 +152,7 @@ const Projects = () => {
                   </Button>
                 </div>
                 <Link to={`/project/${project.id}#top`}>
-                  <Button size="sm" variant="outline" className="w-full hover:bg-primary hover:text-white hover:border-primary transition-all duration-200 group/btn">
+                  <Button size="sm" variant="outline" className="w-full hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-200 group/btn">
                     <Eye className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform duration-200" />
                     Read More
                   </Button>
