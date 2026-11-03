@@ -140,7 +140,7 @@ const Contact = () => {
               {contactInfo.map((info, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                    <info.icon className="w-6 h-6 text-white" />
+                    <info.icon className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
                     <p className="font-medium">{info.label}</p>
