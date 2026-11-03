@@ -63,7 +63,7 @@ const About = () => {
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Over the past <span className="font-semibold text-foreground">2+ years</span> of self-learning and project building, I've developed applications like 
-                <span className="text-accent font-medium"> GadBot (AI chatbot), Student Management System, News Portal, Car Rental Platform,</span> and <span className="text-accent font-medium">Hospital 
+                <span className="font-semibold text-foreground underline decoration-accent decoration-4 underline-offset-4"> GadBot (AI chatbot), Student Management System, News Portal, Car Rental Platform,</span> and <span className="font-semibold text-foreground underline decoration-accent decoration-4 underline-offset-4">Hospital 
                 Management System</span>.
               </p>
               <div className="p-6 rounded-xl bg-gradient-card border border-border mt-6">
