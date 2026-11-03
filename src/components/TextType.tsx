@@ -23,7 +23,7 @@ const TextType: React.FC<TextTypeProps> = ({
 
   useEffect(() => {
     const currentText = text[currentTextIndex];
-    let timeout: NodeJS.Timeout;
+    let timeout: ReturnType<typeof setTimeout>;
 
     if (isTyping && !isDeleting) {
       if (currentCharIndex < currentText.length) {

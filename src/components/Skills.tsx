@@ -53,10 +53,10 @@ const Skills = () => {
 
         <Tabs defaultValue="frontend" className="max-w-5xl mx-auto">
           <TabsList className="grid w-full grid-cols-4 mb-12 bg-card/50 backdrop-blur-sm border border-border/50">
-            <TabsTrigger value="frontend" className="data-[state=active]:bg-primary data-[state=active]:text-white">Frontend</TabsTrigger>
-            <TabsTrigger value="backend" className="data-[state=active]:bg-primary data-[state=active]:text-white">Backend</TabsTrigger>
-            <TabsTrigger value="database" className="data-[state=active]:bg-primary data-[state=active]:text-white">Databases</TabsTrigger>
-            <TabsTrigger value="tools" className="data-[state=active]:bg-primary data-[state=active]:text-white">Other Tools</TabsTrigger>
+            <TabsTrigger value="frontend" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Frontend</TabsTrigger>
+            <TabsTrigger value="backend" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Backend</TabsTrigger>
+            <TabsTrigger value="database" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Databases</TabsTrigger>
+            <TabsTrigger value="tools" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Other Tools</TabsTrigger>
           </TabsList>
 
           {Object.entries(skillCategories).map(([category, skills]) => (
