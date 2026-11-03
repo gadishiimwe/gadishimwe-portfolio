@@ -43,7 +43,7 @@ const Hero = () => {
           <div className="animate-rise" style={{ animationDelay: "0.25s" }}>
             <div className="font-mono text-sm md:text-base text-muted-foreground mb-4 min-h-[1.5rem]">
               <span className="text-foreground">$</span>{" "}
-              <TextType text={["Full-Stack Developer | React • Node.js • PHP • MySQL"]} typingSpeed={60} pauseDuration={4000} showCursor cursorCharacter="▌" loop={false} />
+              <TextType text={["Full-Stack Developer | React • Node.js • PHP • MySQL"]} typingSpeed={60} pauseDuration={4000} showCursor cursorCharacter="▌" />
             </div>
             <p className="text-2xl md:text-4xl leading-[1.15] tracking-tight">
               Full-stack developer from Rwanda building{" "}
