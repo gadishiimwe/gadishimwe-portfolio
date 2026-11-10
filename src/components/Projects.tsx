@@ -1,9 +1,5 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Eye, Sparkles } from "lucide-react";
-import { Link } from "react-router-dom";
-import studentManagementImage from "@/assets/student-management-system.jpg";
+import WorkCard from "./WorkCard";
+import SectionHeader from "./SectionHeader";
 
 const Projects = () => {
   const projects = [
@@ -73,92 +69,12 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-section-bg">
-      <div className="container mx-auto px-6 max-w-5xl">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            7+ real-world projects by a full stack developer in Rwanda, including chatbots, management systems, and dynamic platforms
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Card
-              key={index}
-              className="gradient-card border-border hover:shadow-glow transition-all duration-300 hover:-translate-y-2 overflow-hidden group relative"
-            >
-              <div className="absolute top-4 right-4 z-10">
-                <div className="bg-primary/90 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Sparkles className="w-4 h-4 text-primary-foreground" />
-                </div>
-              </div>
-              <div className="aspect-video overflow-hidden relative">
-                {project.image ? (
-                  <div className="relative w-full h-full">
-                    {project.image.map((img, imgIndex) => (
-                      <img
-                        key={imgIndex}
-                        src={img}
-                        alt={`${project.title} - Image ${imgIndex + 1}`}
-                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-                          imgIndex === 0 ? 'opacity-100' : 'opacity-0 hover:opacity-100'
-                        } hover:scale-105`}
-                        style={{ zIndex: project.image.length - imgIndex }}
-                      />
-                    ))}
-                  </div>
-                ) : (
-                  <img
-                    src={project.image[0]}
-                    alt={project.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <CardHeader className="pb-3">
-                <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300">{project.title}</CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  {project.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, techIndex) => (
-                    <Badge
-                      key={techIndex}
-                      variant="secondary"
-                      className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-                <div className="flex gap-2 mb-3">
-                  {project.liveUrl !== "#" && (
-                    <Button size="sm" variant="hero" className="flex-1 hover:scale-105 transition-transform duration-200" asChild>
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Live Demo
-                      </a>
-                    </Button>
-                  )}
-                  <Button size="sm" variant="hero-outline" className="flex-1 hover:scale-105 transition-transform duration-200" asChild>
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </a>
-                  </Button>
-                </div>
-                <Link to={`/project/${project.id}#top`}>
-                  <Button size="sm" variant="outline" className="w-full hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-200 group/btn">
-                    <Eye className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform duration-200" />
-                    Read More
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
+    <section id="projects" className="py-28">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <SectionHeader eyebrow="Selected work" title={<>Projects that <span className="gradient-hero">ship</span>.</>} subtitle="7+ real-world projects by a full stack developer in Rwanda, including chatbots, management systems, and dynamic platforms." />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {projects.map((p) => (
+            <WorkCard key={p.id} title={p.title} description={p.description} image={p.image[0]} tags={p.technologies} liveUrl={p.liveUrl} githubUrl={p.githubUrl} detailId={p.id} />
           ))}
         </div>
       </div>

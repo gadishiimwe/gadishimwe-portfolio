@@ -1,4 +1,5 @@
-import { MapPin, Building, Calendar } from "lucide-react";
+import { MapPin, Check } from "lucide-react";
+import SectionHeader from "./SectionHeader";
 
 const ProfessionalJourney = () => {
   const experiences = [
@@ -46,82 +47,34 @@ const ProfessionalJourney = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-section-bg">
-      <div className="container mx-auto px-6 max-w-5xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
-            Professional <span className="gradient-hero">Journey</span>
-          </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            From self-taught learner to full-stack developer — building projects that solve real problems
-          </p>
-        </div>
-
-        <div className="max-w-6xl mx-auto">
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary transform md:-translate-x-px"></div>
-            
-            {experiences.map((experience, index) => (
-              <div
-                key={index}
-                className={`relative flex items-center mb-12 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-primary rounded-full transform md:-translate-x-1/2 border-4 border-background z-10"></div>
-                
-                {/* Content card */}
-                <div className={`ml-12 md:ml-0 md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
-                  <div className="gradient-card p-6 rounded-xl shadow-card border border-border/50 backdrop-blur-sm">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                        experience.type === 'Current' ? 'bg-primary text-primary-foreground' :
-                        experience.type === 'Freelance' ? 'bg-accent text-primary-foreground' :
-                        experience.type === 'Learning' ? 'bg-secondary text-foreground' :
-                        'bg-secondary text-foreground'
-                      }`}>
-                        {experience.type}
-                      </span>
-                      <div className="flex items-center text-sm text-muted-foreground">
-                        <Calendar className="w-4 h-4 mr-1" />
-                        {experience.period}
-                      </div>
-                    </div>
-                    
-                    <h3 className="text-xl font-bold text-foreground mb-2">
-                      {experience.title}
-                    </h3>
-                    
-                    <div className="flex items-center text-muted-foreground mb-4">
-                      <Building className="w-4 h-4 mr-2" />
-                      <span className="mr-4">{experience.company}</span>
-                      <MapPin className="w-4 h-4 mr-2" />
-                      <span>{experience.location}</span>
-                    </div>
-                    
-                    <p className="text-muted-foreground mb-4 leading-relaxed">
-                      {experience.description}
-                    </p>
-                    
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-foreground mb-2">Key Achievements:</h4>
-                      <ul className="space-y-1">
-                        {experience.achievements.map((achievement, achievementIndex) => (
-                          <li key={achievementIndex} className="flex items-start text-sm text-muted-foreground">
-                            <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            <span>{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+    <section id="experience" className="py-28 border-t border-border">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <SectionHeader eyebrow="Journey" title={<>Professional <span className="gradient-hero">Journey</span></>} subtitle="From self-taught learner to full-stack developer — building projects that solve real problems." />
+        <div className="space-y-4">
+          {experiences.map((e) => (
+            <div key={e.period} className="ring-gradient grid md:grid-cols-[220px_1fr] gap-6 rounded-3xl border border-border bg-card p-7 md:p-9">
+              <div>
+                <p className="font-display text-2xl font-bold">{e.period}</p>
+                <span className={`mt-3 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${e.type === "Current" ? "bg-accent text-accent-foreground" : "bg-secondary text-muted-foreground"}`}>
+                  {e.type === "Current" && <span className="h-1.5 w-1.5 rounded-full bg-accent-foreground animate-pulse" />}
+                  {e.type}
+                </span>
+                <p className="mt-3 flex items-center gap-1.5 text-sm text-muted-foreground"><MapPin className="w-3.5 h-3.5" />{e.location}</p>
               </div>
-            ))}
-          </div>
+              <div>
+                <h3 className="text-2xl font-semibold">{e.title}</h3>
+                <p className="mt-3 text-muted-foreground leading-relaxed">{e.description}</p>
+                <ul className="mt-5 grid sm:grid-cols-2 gap-3">
+                  {e.achievements.map((a) => (
+                    <li key={a} className="flex gap-3 text-sm text-muted-foreground rounded-2xl bg-secondary/60 p-4">
+                      <Check className="w-4 h-4 mt-0.5 shrink-0 text-accent" />
+                      <span>{a}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
