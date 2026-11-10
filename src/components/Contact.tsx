@@ -1,14 +1,7 @@
+import SectionHeader from "./SectionHeader";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Phone, MapPin, Mail, Github, Linkedin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
@@ -83,8 +76,8 @@ const Contact = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "+250 781 166 081",
-      href: "tel:+250781166081",
+      value: "+250 788 548 084",
+      href: "tel:+250788548084",
     },
     {
       icon: MapPin,
@@ -113,154 +106,62 @@ const Contact = () => {
     },
   ];
 
+  const field = "h-12 rounded-2xl bg-secondary/60 border-border focus-visible:ring-accent";
   return (
-    <section id="contact" className="py-20 bg-section-bg">
-      <div className="container mx-auto px-6 max-w-5xl">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to work together? Tell me about your project and let’s bring
-            your ideas to life.
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Info */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-semibold mb-4">Let’s Connect</h3>
-              <p className="text-muted-foreground mb-6">
-                Open to new projects, partnerships, and conversations. Reach out
-                anytime — let’s build something great!
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {contactInfo.map((info, i) => (
-                <div key={i} className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                    <info.icon className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <div>
-                    <p className="font-medium">{info.label}</p>
-                    {info.href !== "#" ? (
-                      <a
-                        href={info.href}
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        {info.value}
-                      </a>
-                    ) : (
-                      <p className="text-muted-foreground">{info.value}</p>
-                    )}
-                  </div>
-                </div>
+    <section id="contact" className="py-28 border-t border-border">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <SectionHeader eyebrow="Contact" title={<>Let's build <span className="gradient-hero">something great</span>.</>} subtitle="Ready to work together? Tell me about your project and let's bring your ideas to life." />
+        <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-5">
+          <div className="space-y-3">
+            {contactInfo.map((info) => {
+              const Inner = (
+                <>
+                  <span className="w-11 h-11 rounded-2xl bg-secondary grid place-items-center group-hover:bg-accent group-hover:text-accent-foreground transition-colors"><info.icon className="w-5 h-5" /></span>
+                  <span>
+                    <span className="block text-xs text-muted-foreground">{info.label}</span>
+                    <span className="block font-medium">{info.value}</span>
+                  </span>
+                </>
+              );
+              return info.href !== "#" ? (
+                <a key={info.label} href={info.href} className="ring-gradient group flex items-center gap-4 rounded-3xl border border-border bg-card p-5">{Inner}</a>
+              ) : (
+                <div key={info.label} className="group flex items-center gap-4 rounded-3xl border border-border bg-card p-5">{Inner}</div>
+              );
+            })}
+            <div className="flex gap-3 pt-2">
+              {socialLinks.map((s) => (
+                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="h-12 flex-1 rounded-full border border-border bg-card flex items-center justify-center gap-2 text-sm font-medium hover:bg-secondary transition-colors">
+                  <s.icon className="w-4 h-4" /> {s.label}
+                </a>
               ))}
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Follow Me</h4>
-              <div className="flex gap-4">
-                {socialLinks.map((social, i) => (
-                  <a
-                    key={i}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 bg-card border border-border rounded-lg flex items-center justify-center hover:bg-project-hover hover:scale-105 transition-all duration-300"
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </a>
-                ))}
-              </div>
             </div>
           </div>
 
-          {/* Form */}
-          <Card className="gradient-card border-border shadow-card">
-            <CardHeader>
-              <CardTitle>Send Message</CardTitle>
-              <CardDescription>
-                Fill out the form below and I’ll reply as soon as possible.
-              </CardDescription>
-            </CardHeader>
-
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="text-sm font-medium mb-2 block">
-                      Name *
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="bg-secondary border-border"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="text-sm font-medium mb-2 block">
-                      Email *
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="bg-secondary border-border"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="title" className="text-sm font-medium mb-2 block">
-                    Subject *
-                  </label>
-                  <Input
-                    id="title"
-                    name="title"
-                    value={formData.title}
-                    onChange={handleInputChange}
-                    required
-                    className="bg-secondary border-border"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="text-sm font-medium mb-2 block">
-                    Message *
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    rows={6}
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    className="bg-secondary border-border resize-none"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  variant="hero"
-                  size="lg"
-                  className="w-full"
-                  disabled={isSubmitting}
-                >
-                  <Send className="w-5 h-5 mr-2" />
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+          <form onSubmit={handleSubmit} className="rounded-3xl border border-border bg-card p-7 md:p-9 shadow-card space-y-4">
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="name" className="text-sm font-medium mb-2 block">Name</label>
+                <Input id="name" name="name" value={formData.name} onChange={handleInputChange} required className={field} />
+              </div>
+              <div>
+                <label htmlFor="email" className="text-sm font-medium mb-2 block">Email</label>
+                <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} required className={field} />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="title" className="text-sm font-medium mb-2 block">Subject</label>
+              <Input id="title" name="title" value={formData.title} onChange={handleInputChange} required className={field} />
+            </div>
+            <div>
+              <label htmlFor="message" className="text-sm font-medium mb-2 block">Message</label>
+              <Textarea id="message" name="message" rows={6} value={formData.message} onChange={handleInputChange} required className="rounded-2xl bg-secondary/60 border-border resize-none focus-visible:ring-accent" />
+            </div>
+            <button type="submit" disabled={isSubmitting} className="w-full h-12 rounded-full gradient-button text-accent-foreground font-semibold flex items-center justify-center gap-2 shadow-glow hover:brightness-110 disabled:opacity-60 transition-all">
+              <Send className="w-4 h-4" />
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </button>
+          </form>
         </div>
       </div>
     </section>

@@ -1,99 +1,57 @@
 import profileImage from "@/assets/gad-profile-main.jpg";
 import { Code, Database, Globe, Brain } from "lucide-react";
+import SectionHeader from "./SectionHeader";
 
-const About = () => {
-  const services = [
-    {
-      icon: Code,
-      title: "Full-Stack Development",
-      description: "React frontends + Node.js/PHP backends for complete web applications"
-    },
-    {
-      icon: Database,
-      title: "Database & CRUD Systems",
-      description: "MySQL, SQL, authentication, and secure data management"
-    },
-    {
-      icon: Globe,
-      title: "Real-World Apps",
-      description: "School, hospital, rental, and visitor management systems"
-    },
-    {
-      icon: Brain,
-      title: "Emerging Tech",
-      description: "Exploring AI APIs and modern deployment tools"
-    }
-  ];
+const services = [
+  { icon: Code, title: "Full-Stack Development", description: "React frontends + Node.js/PHP backends for complete web applications" },
+  { icon: Database, title: "Database & CRUD Systems", description: "MySQL, SQL, authentication, and secure data management" },
+  { icon: Globe, title: "Real-World Apps", description: "School, hospital, rental, and visitor management systems" },
+  { icon: Brain, title: "Emerging Tech", description: "Exploring AI APIs and modern deployment tools" },
+];
 
-  return (
-    <section id="about" className="py-20 bg-section-bg">
-      <div className="container mx-auto px-6 max-w-5xl">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">About Me</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Building real-world applications that solve actual problems with clean, scalable code
-          </p>
-        </div>
+const About = () => (
+  <section id="about" className="py-28">
+    <div className="container mx-auto px-6 max-w-6xl">
+      <SectionHeader eyebrow="About me" title={<>Clean code for <span className="gradient-hero">real problems</span>.</>} />
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto mb-16">
-          <div className="space-y-6">
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-primary rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
-              <div className="relative w-full aspect-[3/4] max-w-md mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-card">
-                <img
-                  src={profileImage}
-                  alt="Gad ISHIMWE - Full Stack Developer"
-                  className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            </div>
-            <div className="text-center lg:text-left space-y-2">
-              <h3 className="text-2xl font-bold">Gad ISHIMWE</h3>
-              <p className="text-lg text-primary font-semibold">Full Stack Developer</p>
-              <p className="text-muted-foreground">Kigali, Rwanda 🇷🇼</p>
-            </div>
-          </div>
-
-          <div className="space-y-6 lg:pt-8">
-            <div className="space-y-4">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm Gad Ishimwe, a <span className="font-semibold text-foreground">full-stack developer from Rwanda</span> passionate about creating functional and user-friendly
-                web applications. As a skilled web developer in Rwanda, I specialize in <span className="text-primary font-medium">React, Node.js, PHP, and MySQL</span> with additional experience
-                deploying apps on Vercel, Netlify, and Heroku.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Over the past <span className="font-semibold text-foreground">2+ years</span> of self-learning and project building, I've developed applications like 
-                <span className="font-semibold text-foreground underline decoration-accent decoration-4 underline-offset-4"> GadBot (AI chatbot), Student Management System, News Portal, Car Rental Platform,</span> and <span className="font-semibold text-foreground underline decoration-accent decoration-4 underline-offset-4">Hospital 
-                Management System</span>.
-              </p>
-              <div className="p-6 rounded-xl bg-gradient-card border border-border mt-6">
-                <p className="text-lg font-semibold text-foreground leading-relaxed">
-                  💡 I focus on building real-world applications that solve actual problems with clean, scalable code.
-                </p>
-              </div>
-            </div>
+      <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-stretch">
+        <div className="relative rounded-[2rem] overflow-hidden border border-border shadow-card min-h-[420px]">
+          <img src={profileImage} alt="Gad ISHIMWE - Full Stack Developer" className="absolute inset-0 w-full h-full object-cover object-top" />
+          <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-background via-background/70 to-transparent">
+            <h3 className="text-2xl font-bold">Gad ISHIMWE</h3>
+            <p className="text-muted-foreground">Full Stack Developer · Kigali, Rwanda</p>
           </div>
         </div>
 
-        <div className="mt-16">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="gradient-card p-6 rounded-xl shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-2"
-              >
-                <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                  <service.icon className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <h4 className="text-lg font-semibold mb-2">{service.title}</h4>
-                <p className="text-muted-foreground text-sm">{service.description}</p>
-              </div>
-            ))}
+        <div className="rounded-[2rem] border border-border bg-card p-8 md:p-10 shadow-card flex flex-col justify-between gap-8">
+          <div className="space-y-5 text-lg text-muted-foreground leading-relaxed">
+            <p>
+              I'm Gad Ishimwe, a <span className="text-foreground font-semibold">full-stack developer from Rwanda</span> passionate about creating functional and user-friendly web applications. I specialize in <span className="text-foreground font-semibold">React, Node.js, PHP, and MySQL</span>, with experience deploying apps on Vercel, Netlify, and Heroku.
+            </p>
+            <p>
+              Over the past <span className="text-foreground font-semibold">2+ years</span> of self-learning and project building, I've developed GadBot (AI chatbot), a Student Management System, a News Portal, a Car Rental Platform and a Hospital Management System.
+            </p>
+          </div>
+          <div className="rounded-2xl bg-secondary p-5 flex gap-4 items-start">
+            <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-accent shadow-glow" />
+            <p className="font-medium text-foreground">I focus on building real-world applications that solve actual problems with clean, scalable code.</p>
           </div>
         </div>
       </div>
-    </section>
-  );
-};
+
+      <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {services.map((s) => (
+          <div key={s.title} className="ring-gradient group rounded-3xl border border-border bg-card p-6 hover:-translate-y-1 transition-transform duration-300">
+            <div className="w-11 h-11 rounded-2xl bg-secondary grid place-items-center mb-5 group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+              <s.icon className="w-5 h-5" />
+            </div>
+            <h4 className="font-semibold text-lg mb-1.5">{s.title}</h4>
+            <p className="text-sm text-muted-foreground">{s.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default About;
