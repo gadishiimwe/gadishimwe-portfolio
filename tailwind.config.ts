@@ -75,9 +75,9 @@ export default {
 				'gradient-button': 'var(--gradient-button)'
 			},
 			fontFamily: {
-				sans: ['Manrope', 'system-ui', 'sans-serif'],
+				sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
 				mono: ['JetBrains Mono', 'monospace'],
-				display: ['Bricolage Grotesque', 'sans-serif']
+				display: ['Space Grotesk', 'sans-serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
