@@ -13,6 +13,28 @@ const links = [
   { id: "contact", label: "Contact" },
 ];
 
+const ThemeToggle = ({ dark, onToggle }: { dark: boolean; onToggle: () => void }) => (
+  <button
+    type="button"
+    role="switch"
+    aria-checked={dark}
+    aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+    onClick={onToggle}
+    className={`group relative flex h-10 w-[76px] items-center rounded-full border p-1 transition-all duration-500 ease-[cubic-bezier(.2,.8,.2,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background ${dark ? "justify-end border-amber-300/50 bg-[#17130b] shadow-[inset_0_0_14px_rgba(251,191,36,.12),0_0_18px_rgba(251,191,36,.08)]" : "justify-start border-sky-300/70 bg-sky-100 shadow-[inset_0_0_14px_rgba(56,189,248,.12)]"}`}
+  >
+    <span className={`absolute inset-0 overflow-hidden rounded-full transition-opacity duration-500 ${dark ? "opacity-100" : "opacity-0"}`}>
+      <span className="absolute right-3 top-2 h-1 w-1 rounded-full bg-amber-200 shadow-[0_0_7px_2px_rgba(253,230,138,.7)]" />
+      <span className="absolute right-7 bottom-2 h-0.5 w-0.5 rounded-full bg-amber-100" />
+      <span className="absolute left-4 top-3 h-0.5 w-0.5 rounded-full bg-amber-100" />
+    </span>
+    <span className={`relative z-10 grid h-7 w-7 place-items-center rounded-full shadow-md transition-all duration-500 ease-[cubic-bezier(.2,.8,.2,1)] ${dark ? "rotate-[360deg] bg-gradient-to-br from-amber-200 to-orange-400 text-[#38210a]" : "rotate-0 bg-gradient-to-br from-white to-sky-200 text-sky-700"}`}>
+      <Sun className={`absolute h-4 w-4 transition-all duration-300 ${dark ? "scale-0 rotate-[-90deg] opacity-0" : "scale-100 rotate-0 opacity-100"}`} />
+      <Moon className={`absolute h-4 w-4 transition-all duration-300 ${dark ? "scale-100 rotate-0 opacity-100" : "scale-0 rotate-90 opacity-0"}`} />
+    </span>
+    <span className={`relative z-10 mr-1 text-[9px] font-semibold uppercase tracking-wider transition-colors duration-300 ${dark ? "text-amber-100/70" : "text-sky-800/65"}`}>{dark ? "Night" : "Day"}</span>
+  </button>
+);
+
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -48,18 +70,14 @@ const Navigation = () => {
               {l.label}
             </button>
           ))}
-          <button aria-label="Toggle theme" onClick={() => setDark(!dark)} className="w-10 h-10 rounded-full border-[1.5px] border-foreground grid place-items-center hover:bg-accent hover:text-accent-foreground transition-colors">
-            {dark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-          </button>
+          <ThemeToggle dark={dark} onToggle={() => setDark((value) => !value)} />
           <button onClick={() => setCvOpen(true)} className="px-4 h-10 rounded-full border border-hairline bg-card font-medium text-sm flex items-center gap-1 hover:bg-secondary transition-colors">
             CV <ArrowDown className="w-4 h-4" />
           </button>
         </div>
 
         <div className="flex md:hidden items-center gap-2">
-          <button aria-label="Toggle theme" onClick={() => setDark(!dark)} className="w-10 h-10 rounded-full border-[1.5px] border-foreground grid place-items-center">
-            {dark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-          </button>
+          <ThemeToggle dark={dark} onToggle={() => setDark((value) => !value)} />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon"><Menu className="h-6 w-6" /></Button>
