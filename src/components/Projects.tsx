@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -17,6 +18,7 @@ type Project = {
 };
 
 const Projects = () => {
+  const [showAllProjects, setShowAllProjects] = useState(false);
   const projects: Project[] = [
     { id: "bamboo-rooftop", title: "Bamboo Rooftop", description: "A polished digital presence for a rooftop dining destination, showcasing its atmosphere and guest experience.", image: ["https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Responsive Design", "Web Development"], liveUrl: "https://bamboorooftop.vercel.app/", type: "Hospitality Website", featured: true },
     { id: "employipay", title: "EmployiPay", description: "A full-stack payroll and HR platform designed to simplify employee management and business workflows.", image: ["https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=85"], technologies: ["TypeScript", "React", "Payroll", "Business Software"], liveUrl: "https://employipay.vercel.app/", type: "Business Platform", featured: true },
@@ -29,7 +31,7 @@ const Projects = () => {
     { id: "boho-restaurant", title: "Boho Restaurant", description: "A restaurant website focused on atmosphere, visual storytelling, and a smooth browsing experience.", image: ["https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=85"], technologies: ["Web Design", "Responsive Design"], liveUrl: "https://www.boho.rw/", type: "Restaurant Website" },
     { id: "personal-portfolio", title: "Gad Ishimwe — Portfolio", description: "My personal developer portfolio, bringing together selected client websites, software projects, and experiments.", image: ["https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "TypeScript", "Tailwind CSS", "Vercel"], liveUrl: "https://gadishimwe.vercel.app/", type: "Personal Website" },
     { id: "gadbot", title: "GadBot", description: "An AI chatbot built to provide a conversational interface for asking questions and getting assistance.", image: ["https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Node.js", "AI API", "Vercel"], liveUrl: "https://gadbot.vercel.app/", githubUrl: "https://github.com/gadishiimwe/nextjs-ai-chatbot", type: "AI & Automation", featured: true },
-    { id: "gadvoiceai", title: "GadVoice AI", description: "A browser-based voice experience exploring speech recognition and voice-first interaction.", image: ["https://images.unsplash.com/photo-1590602847861-f357a9332reno?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Web Speech API", "JavaScript"], liveUrl: "https://gadvoiceai.vercel.app/", githubUrl: "https://github.com/gadishiimwe/gadvoiceai", type: "AI & Voice" },
+    { id: "gadvoiceai", title: "GadVoice AI", description: "A browser-based voice experience exploring speech recognition and voice-first interaction.", image: ["https://images.unsplash.com/photo-1590602847861-f357a9332e07?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Web Speech API", "JavaScript"], liveUrl: "https://gadvoiceai.vercel.app/", githubUrl: "https://github.com/gadishiimwe/gadvoiceai", type: "AI & Voice" },
     { id: "student-management-system", title: "Student Management System", description: "A full-stack student administration system with authentication and database-backed records.", image: ["https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Node.js", "MySQL", "Authentication"], githubUrl: "https://github.com/gadishiimwe/student-management-system", type: "Education" },
     { id: "news-portal", title: "News Portal", description: "A dynamic publishing platform with a content management system and admin panel.", image: ["https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=85"], technologies: ["PHP", "MySQL", "CMS", "Admin Panel"], githubUrl: "https://github.com/gadishiimwe/newsportal", type: "Web Platform" },
     { id: "hospital-management-system", title: "Hospital Management System", description: "A PHP and MySQL system for organizing patient, doctor, and appointment records.", image: ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85"], technologies: ["PHP", "MySQL", "CRUD", "Admin Dashboard"], githubUrl: "https://github.com/gadishiimwe/Hospital-Management-System-PHP", type: "Healthcare" },
@@ -106,14 +108,22 @@ const Projects = () => {
             <div><h3 className="text-2xl font-semibold tracking-tight">Deployed apps & platforms</h3><p className="mt-2 text-sm text-muted-foreground">Independent apps and platforms hosted online.</p></div>
             <span className="font-mono text-xs text-muted-foreground">{String(liveProjects.length).padStart(2, "0")} items</span>
           </div>
-          <ProjectsGrid items={liveProjects} />
+          <ProjectsGrid items={showAllProjects ? liveProjects : liveProjects.slice(0, 6)} />
         </div>
         <div className="border-t border-hairline pt-10">
           <div className="mb-6 flex items-end justify-between gap-4">
             <div><div className="mb-2 flex items-center gap-2 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground"><Clock3 className="h-3.5 w-3.5" />Work in progress</div><h3 className="text-2xl font-semibold tracking-tight">Currently building</h3><p className="mt-2 text-sm text-muted-foreground">Early-stage products and experiments — clearly marked as in development.</p></div>
             <span className="font-mono text-xs text-muted-foreground">{String(inDevelopmentProjects.length).padStart(2, "0")} items</span>
           </div>
-          <ProjectsGrid items={inDevelopmentProjects} startIndex={liveProjects.length} />
+          <ProjectsGrid items={showAllProjects ? inDevelopmentProjects : inDevelopmentProjects.slice(0, 3)} startIndex={liveProjects.length} />
+          {(liveProjects.length > 6 || inDevelopmentProjects.length > 3) && (
+            <div className="mt-10 flex justify-center">
+              <Button variant="outline" className="rounded-full px-7" onClick={() => setShowAllProjects((current) => !current)}>
+                {showAllProjects ? "Show fewer projects" : `View all ${featuredProjects.length} projects`}
+                <ArrowUpRight className={`ml-2 h-4 w-4 transition-transform ${showAllProjects ? "rotate-[-45deg]" : ""}`} />
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </section>
