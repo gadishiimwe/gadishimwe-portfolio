@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Terminal, ArrowUpRight } from "lucide-react";
 
 const bootLines = [
@@ -12,29 +12,35 @@ const bootLines = [
 const LoadingScreen = ({ onLoadingComplete }: { onLoadingComplete: () => void }) => {
   const [visibleLines, setVisibleLines] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
+  const onLoadingCompleteRef = useRef(onLoadingComplete);
+
+  // Keep the latest callback without restarting the boot sequence on re-renders.
+  useEffect(() => {
+    onLoadingCompleteRef.current = onLoadingComplete;
+  }, [onLoadingComplete]);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      const timer = window.setTimeout(onLoadingComplete, 450);
+      const timer = window.setTimeout(() => onLoadingCompleteRef.current(), 450);
       return () => window.clearTimeout(timer);
     }
 
     const timers = bootLines.map((_, index) =>
-      window.setTimeout(() => setVisibleLines(index + 1), 450 + index * 1150)
+      window.setTimeout(() => setVisibleLines(index + 1), 500 + index * 1800)
     );
-    const finish = window.setTimeout(() => setIsExiting(true), 5400);
-    const complete = window.setTimeout(onLoadingComplete, 6000);
+    const finish = window.setTimeout(() => setIsExiting(true), 9400);
+    const complete = window.setTimeout(() => onLoadingCompleteRef.current(), 10000);
 
     return () => {
       timers.forEach(window.clearTimeout);
       window.clearTimeout(finish);
       window.clearTimeout(complete);
     };
-  }, [onLoadingComplete]);
+  }, []);
 
   const skipIntro = () => {
     setIsExiting(true);
-    window.setTimeout(onLoadingComplete, 220);
+    window.setTimeout(() => onLoadingCompleteRef.current(), 220);
   };
 
   return (
