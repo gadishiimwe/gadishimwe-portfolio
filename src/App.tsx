@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,9 +11,12 @@ import LoadingScreen from "./components/LoadingScreen";
 const queryClient = new QueryClient();
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(
+    () => !sessionStorage.getItem("gad-intro-seen")
+  );
 
   const handleLoadingComplete = () => {
+    sessionStorage.setItem("gad-intro-seen", "true");
     setIsLoading(false);
   };
 
