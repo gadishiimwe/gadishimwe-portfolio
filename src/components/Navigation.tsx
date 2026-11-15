@@ -38,8 +38,19 @@ const Navigation = () => {
   return (
     <nav className={`fixed top-0 inset-x-0 z-50 border-b transition-all duration-300 ${isScrolled ? "backdrop-blur-glass border-hairline py-3" : "border-transparent py-5"}`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="w-11 h-11 rounded-lg bg-accent text-accent-foreground border border-hairline grid place-items-center font-bold tracking-tight hover:bg-accent/80 transition-colors">
-          GI
+        <Link
+          to="/"
+          aria-label="Gad Ishimwe — home"
+          className="group relative grid h-12 w-12 place-items-center rounded-[15px] bg-gradient-to-br from-[#ffe28a] via-[#f4bd3f] to-[#c98716] p-[1px] shadow-[0_5px_18px_rgba(210,153,35,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(210,153,35,0.36)]"
+        >
+          <span className="absolute inset-[1px] rounded-[14px] border border-white/35" />
+          <span className="absolute inset-[4px] rounded-[11px] border border-black/10" />
+          <span className="relative flex items-baseline gap-[1px] text-[#211806] drop-shadow-[0_1px_0_rgba(255,255,255,0.25)]">
+            <span className="text-[25px] font-black leading-none tracking-[-0.09em]">G</span>
+            <span className="text-[22px] font-extrabold leading-none tracking-[-0.08em]">I</span>
+          </span>
+          <span className="absolute bottom-[7px] right-[8px] h-[4px] w-[4px] rounded-full bg-[#fff8df] shadow-[0_0_7px_rgba(255,255,255,0.9)]" />
+          <span className="pointer-events-none absolute inset-0 rounded-[15px] bg-gradient-to-br from-white/25 via-transparent to-black/10 opacity-80 transition-opacity group-hover:opacity-100" />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
