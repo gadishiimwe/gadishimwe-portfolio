@@ -36,9 +36,9 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${isScrolled ? "backdrop-blur-glass shadow-nav py-3" : "py-5"}`}>
+    <nav className={`fixed top-0 inset-x-0 z-50 border-b transition-all duration-300 ${isScrolled ? "backdrop-blur-glass border-hairline py-3" : "border-transparent py-5"}`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="w-11 h-11 rounded-lg bg-accent text-accent-foreground border-[1.5px] border-foreground shadow-brutal grid place-items-center font-bold tracking-tight hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+        <Link to="/" className="w-11 h-11 rounded-lg bg-accent text-accent-foreground border border-hairline grid place-items-center font-bold tracking-tight hover:bg-accent/80 transition-colors">
           GI
         </Link>
 
@@ -51,7 +51,7 @@ const Navigation = () => {
           <button aria-label="Toggle theme" onClick={() => setDark(!dark)} className="w-10 h-10 rounded-full border-[1.5px] border-foreground grid place-items-center hover:bg-accent hover:text-accent-foreground transition-colors">
             {dark ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
           </button>
-          <button onClick={() => setCvOpen(true)} className="px-4 h-10 rounded-full border-[1.5px] border-foreground bg-card shadow-brutal font-medium text-sm flex items-center gap-1 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+          <button onClick={() => setCvOpen(true)} className="px-4 h-10 rounded-full border border-hairline bg-card font-medium text-sm flex items-center gap-1 hover:bg-secondary transition-colors">
             CV <ArrowDown className="w-4 h-4" />
           </button>
         </div>

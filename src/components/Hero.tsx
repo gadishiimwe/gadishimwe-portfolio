@@ -56,13 +56,13 @@ const Hero = () => {
         </div>
 
         <div className="mt-10 flex flex-wrap items-center gap-4 animate-rise" style={{ animationDelay: "0.45s" }}>
-          <button onClick={() => go("projects")} className="group flex items-center gap-4 pl-6 pr-2 h-14 rounded-full bg-card border-[1.5px] border-foreground shadow-brutal font-medium hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all">
+          <button onClick={() => go("projects")} className="group flex items-center gap-4 pl-6 pr-2 h-14 rounded-full bg-card border border-hairline font-medium hover:bg-secondary transition-colors">
             See the work
-            <span className="w-10 h-10 rounded-full bg-accent text-accent-foreground grid place-items-center border-[1.5px] border-foreground group-hover:rotate-[-45deg] transition-transform">
+            <span className="w-10 h-10 rounded-full bg-accent text-accent-foreground grid place-items-center group-hover:translate-x-0.5 transition-transform">
               <ArrowRight className="w-4 h-4" />
             </span>
           </button>
-          <button onClick={() => setCvDialogOpen(true)} className="h-14 px-6 rounded-full border-[1.5px] border-dashed border-foreground/50 hover:border-foreground hover:bg-card transition-colors font-medium">
+          <button onClick={() => setCvDialogOpen(true)} className="h-14 px-6 rounded-full border border-hairline hover:bg-card transition-colors font-medium">
             Request resume
           </button>
           <div className="flex gap-2 ml-auto">
@@ -70,7 +70,7 @@ const Hero = () => {
               { href: "https://github.com/gadishiimwe", icon: Github, label: "GitHub" },
               { href: "https://www.linkedin.com/in/gad-ishimwe/", icon: Linkedin, label: "LinkedIn" },
             ].map(({ href, icon: Icon, label }) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="w-12 h-12 rounded-full border-[1.5px] border-foreground grid place-items-center hover:bg-accent hover:text-accent-foreground transition-colors">
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="w-12 h-12 rounded-full border border-hairline grid place-items-center hover:bg-secondary transition-colors">
                 <Icon className="w-5 h-5" />
               </a>
             ))}
@@ -87,11 +87,12 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="mt-16 border-y-[1.5px] border-foreground bg-accent text-accent-foreground overflow-hidden py-4 -rotate-1 scale-105">
-        <div className="flex w-max animate-marquee">
-          {[...stack, ...stack, ...stack, ...stack].map((t, i) => (
-            <span key={i} className="mx-6 text-xl font-bold uppercase tracking-tight flex items-center gap-6">
-              {t} <span className="text-base">✦</span>
+      <div className="mt-16 border-y border-hairline bg-card/60 py-5">
+        <div className="container mx-auto px-6 max-w-6xl flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
+          {stack.map((technology) => (
+            <span key={technology} className="flex items-center gap-2.5 font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+              {technology}
             </span>
           ))}
         </div>

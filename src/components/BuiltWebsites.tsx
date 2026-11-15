@@ -56,7 +56,7 @@ const BuiltWebsites = () => {
           {websites.map((website, index) => (
             <Card
               key={index}
-              className="gradient-card border-border hover:shadow-glow transition-all duration-300 hover:-translate-y-2 overflow-hidden group relative"
+              className="gradient-card hover:border-foreground/25 transition-colors duration-200 overflow-hidden group relative"
             >
               <div className="absolute top-4 right-4 z-10">
                 <div className="bg-primary/90 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -73,7 +73,7 @@ const BuiltWebsites = () => {
                         alt={`${website.title} - Image ${imgIndex + 1}`}
                         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
                           imgIndex === 0 ? 'opacity-100' : 'opacity-0 hover:opacity-100'
-                        } hover:scale-105`}
+                        } group-hover:scale-[1.02]`}
                         style={{ zIndex: website.images.length - imgIndex }}
                       />
                     ))}
@@ -82,7 +82,7 @@ const BuiltWebsites = () => {
                   <img
                     src={website.image}
                     alt={website.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                   />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -110,7 +110,7 @@ const BuiltWebsites = () => {
                     </Badge>
                   ))}
                 </div>
-                <Button size="sm" variant="hero" className="w-full hover:scale-105 transition-transform duration-200" asChild>
+                <Button size="sm" variant="hero" className="w-full" asChild>
                   <a href={website.liveUrl} target="_blank" rel="noopener noreferrer">
                     <Globe className="w-4 h-4 mr-2" />
                     Visit Website

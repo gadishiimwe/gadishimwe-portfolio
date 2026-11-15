@@ -168,7 +168,7 @@ const Contact = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-card border border-border rounded-lg flex items-center justify-center hover:bg-project-hover hover:scale-105 transition-all duration-300"
+                    className="w-12 h-12 bg-card border border-hairline rounded-lg flex items-center justify-center hover:bg-secondary transition-colors duration-200"
                   >
                     <social.icon className="w-5 h-5" />
                   </a>
@@ -178,7 +178,7 @@ const Contact = () => {
           </div>
 
           {/* Form */}
-          <Card className="gradient-card border-border shadow-card">
+          <Card className="gradient-card">
             <CardHeader>
               <CardTitle>Send Message</CardTitle>
               <CardDescription>
