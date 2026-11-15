@@ -242,7 +242,6 @@ const ProjectDetail = () => {
       challenges: ["Reliable camera input across devices", "Interpreting movement consistently", "Keeping drawing interactions responsive", "Designing a simple experience for first-time users"],
       date: "In development",
       status: "In development",
-      gallery: []
     },
     {
       id: "ikinyarai",
@@ -255,7 +254,6 @@ const ProjectDetail = () => {
       challenges: ["Quality and availability of Kinyarwanda language data", "Accuracy and cultural context", "Evaluating responses with native speakers", "Building trust through clear limitations"],
       date: "Concept / In development",
       status: "In development",
-      gallery: []
     },
     {
       id: "queueless",
@@ -268,7 +266,6 @@ const ProjectDetail = () => {
       challenges: ["Keeping queue positions synchronized", "Handling walk-ins and remote visitors together", "Making wait estimates useful and honest", "Designing a workflow staff can operate easily"],
       date: "Concept / In development",
       status: "In development",
-      gallery: []
     },
     {
       id: "gad-ai-desktop",
@@ -281,7 +278,6 @@ const ProjectDetail = () => {
       challenges: ["Safe permissions and action boundaries", "Reliable execution across Windows environments", "Clear feedback when tasks succeed or fail", "Balancing convenience with user control"],
       date: "Planned / In development",
       status: "In development",
-      gallery: []
     },
     {
       id: "rwanda-china-trade",
@@ -294,7 +290,6 @@ const ProjectDetail = () => {
       challenges: ["Building supplier trust and verification", "Reliable logistics status integrations", "Cross-border payments and dispute handling", "Accurate landed-cost and delivery information"],
       date: "Concept / In development",
       status: "In development",
-      gallery: []
     },
   ];
 
