@@ -419,7 +419,7 @@ const ProjectDetail = () => {
             </div>
 
             <div className="flex justify-center gap-4">
-              {project.liveUrl !== "#" && (
+              {project.liveUrl && project.liveUrl !== "#" && (
                 <Button size="lg" className="hover:scale-105 transition-transform duration-200 shadow-lg hover:shadow-xl" asChild>
                   <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="w-5 h-5 mr-2" />
