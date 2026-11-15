@@ -1,126 +1,124 @@
-import { MapPin, Building, Calendar } from "lucide-react";
+import { BriefcaseBusiness, Building2, CalendarDays, CheckCircle2, Code2, GraduationCap, MapPin } from "lucide-react";
 
 const ProfessionalJourney = () => {
   const experiences = [
     {
       title: "Full-Stack Developer (Freelance & Personal Projects)",
-      company: "Remote",
+      company: "Independent",
       location: "Remote",
-      period: "2022 - Present",
+      period: "2022 – Present",
       type: "Current",
-      description: "Building and deploying web applications using React, Node.js, PHP, and MySQL. Focused on practical projects that solve real-world problems and improve user experience.",
+      icon: Code2,
+      description: "Building and deploying web applications with React, Node.js, PHP, and MySQL. Focused on practical digital products, thoughtful user experiences, and solving real-world problems through software.",
       achievements: [
-        "Developed 7+ full-stack applications including car rental, student management, news portal, hospital management, and visitor tracking systems.",
-        "Deployed projects on Vercel, Netlify, and Heroku with live demos.",
-        "Implemented secure authentication, CRUD operations, and responsive design.",
-        "Collaborated via GitHub and shared work with public repositories."
+        "Developed 7+ applications across business, education, healthcare, and productivity use cases.",
+        "Deployed projects using platforms including Vercel, Netlify, and Heroku.",
+        "Built features such as authentication, database-backed workflows, CRUD operations, and responsive interfaces.",
+        "Used Git and GitHub to manage code, track changes, and share development work."
       ]
     },
     {
       title: "Web Developer (Learning & Freelance Work)",
-      company: "Rwanda",
+      company: "Freelance",
       location: "Rwanda",
-      period: "2021 - 2022",
+      period: "2021 – 2022",
       type: "Freelance",
-      description: "Gained practical experience building websites and small applications while completing online certifications and practicing coding fundamentals.",
+      icon: BriefcaseBusiness,
+      description: "Developed practical websites and small applications while strengthening core web-development skills through independent projects and online learning.",
       achievements: [
         "Built personal and client websites using WordPress, HTML, CSS, and PHP.",
-        "Learned MySQL database design and integrated CRUD operations.",
-        "Delivered responsive, user-friendly designs for local clients.",
-        "Completed multiple certifications (FreeCodeCamp, Udacity, Edureka)."
+        "Practiced MySQL database design and connected applications to CRUD workflows.",
+        "Worked on responsive layouts and user-friendly website experiences.",
+        "Completed online learning and certification programmes in web development."
       ]
     },
     {
       title: "Self-Learner (Programming Foundations)",
-      company: "Rwanda",
+      company: "Independent Learning",
       location: "Rwanda",
-      period: "2020 - 2021",
+      period: "2020 – 2021",
       type: "Learning",
-      description: "Focused on mastering programming basics, algorithms, and web development through structured online learning.",
+      icon: GraduationCap,
+      description: "Started the journey into software development by learning programming fundamentals, problem-solving, and the building blocks of the web through structured online study and hands-on practice.",
       achievements: [
-        "Earned certifications in Web Design, Programming, and AI fundamentals.",
-        "Completed foundational projects including calculators, portfolio websites, and simple apps.",
-        "Ranked Top 20% in Software Development coursework at Glory Academy."
+        "Earned certificates in web design, programming, and AI fundamentals.",
+        "Created foundational projects including calculators, portfolio websites, and simple applications.",
+        "Built a foundation in software development through coursework and consistent independent practice."
       ]
     }
   ];
 
   return (
-    <section id="experience" className="py-20 bg-section-bg">
-      <div className="container mx-auto px-6 max-w-5xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+    <section id="experience" className="relative overflow-hidden bg-section-bg py-24 md:py-28">
+      <div className="pointer-events-none absolute -left-40 top-24 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
+      <div className="pointer-events-none absolute -right-40 bottom-10 h-80 w-80 rounded-full bg-accent/5 blur-3xl" />
+
+      <div className="container relative mx-auto max-w-6xl px-6">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <div className="mb-5 inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            <span className="h-px w-8 bg-accent" />
+            The path so far
+            <span className="h-px w-8 bg-accent" />
+          </div>
+          <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
             Professional <span className="gradient-hero">Journey</span>
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            From self-taught learner to full-stack developer — building projects that solve real problems
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            A journey shaped by curiosity, continuous learning, and building real software — from programming foundations to full-stack development.
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary transform md:-translate-x-px"></div>
-            
-            {experiences.map((experience, index) => (
-              <div
-                key={index}
-                className={`relative flex items-center mb-12 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-primary rounded-full transform md:-translate-x-1/2 border-4 border-background z-10"></div>
-                
-                {/* Content card */}
-                <div className={`ml-12 md:ml-0 md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
-                  <div className="gradient-card p-6 rounded-xl">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                        experience.type === 'Current' ? 'bg-primary text-primary-foreground' :
-                        experience.type === 'Freelance' ? 'bg-accent text-primary-foreground' :
-                        experience.type === 'Learning' ? 'bg-secondary text-foreground' :
-                        'bg-secondary text-foreground'
-                      }`}>
-                        {experience.type}
-                      </span>
-                      <div className="flex items-center text-sm text-muted-foreground">
-                        <Calendar className="w-4 h-4 mr-1" />
-                        {experience.period}
+        <div className="relative mx-auto max-w-5xl">
+          <div className="absolute bottom-8 left-5 top-8 w-px bg-gradient-to-b from-primary/70 via-border to-transparent md:left-1/2 md:-translate-x-1/2" />
+
+          <div className="space-y-8 md:space-y-12">
+            {experiences.map((experience, index) => {
+              const Icon = experience.icon;
+              const isCurrent = experience.type === "Current";
+              return (
+                <article key={experience.title} className={`relative grid grid-cols-1 md:grid-cols-2 md:gap-16 ${index % 2 === 0 ? "" : "md:[&>div:first-child]:order-2"}`}>
+                  <div className={`absolute left-5 top-7 z-10 grid h-10 w-10 -translate-x-1/2 place-items-center rounded-2xl border bg-background shadow-sm md:left-1/2 ${isCurrent ? "border-primary/40 text-primary ring-4 ring-primary/10" : "border-border text-muted-foreground"}`}>
+                    <Icon className="h-4 w-4" />
+                  </div>
+
+                  <div className={`pl-14 md:pl-0 ${index % 2 === 0 ? "md:col-start-1 md:pr-2 md:text-right" : "md:col-start-2 md:pl-2"}`}>
+                    <div className={`group rounded-2xl border border-hairline bg-card/80 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl md:p-7 ${index % 2 === 0 ? "md:text-left" : ""}`}>
+                      <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+                        <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] ${isCurrent ? "bg-primary/10 text-primary" : "bg-secondary text-secondary-foreground"}`}>
+                          {isCurrent && <span className="h-1.5 w-1.5 rounded-full bg-primary" />}
+                          {experience.type}
+                        </span>
+                        <span className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground">
+                          <CalendarDays className="h-3.5 w-3.5" />
+                          {experience.period}
+                        </span>
+                      </div>
+
+                      <h3 className="text-xl font-semibold leading-snug tracking-tight text-foreground md:text-2xl">{experience.title}</h3>
+                      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
+                        <span className="inline-flex items-center gap-1.5"><Building2 className="h-3.5 w-3.5" />{experience.company}</span>
+                        <span className="inline-flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" />{experience.location}</span>
+                      </div>
+
+                      <p className="mt-5 text-sm leading-7 text-muted-foreground">{experience.description}</p>
+
+                      <div className="mt-6 border-t border-hairline pt-5">
+                        <h4 className="mb-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">Highlights & experience</h4>
+                        <ul className="space-y-3">
+                          {experience.achievements.map((achievement) => (
+                            <li key={achievement} className="flex items-start gap-3 text-left text-sm leading-relaxed text-muted-foreground">
+                              <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary/80" />
+                              <span>{achievement}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
-                    
-                    <h3 className="text-xl font-bold text-foreground mb-2">
-                      {experience.title}
-                    </h3>
-                    
-                    <div className="flex items-center text-muted-foreground mb-4">
-                      <Building className="w-4 h-4 mr-2" />
-                      <span className="mr-4">{experience.company}</span>
-                      <MapPin className="w-4 h-4 mr-2" />
-                      <span>{experience.location}</span>
-                    </div>
-                    
-                    <p className="text-muted-foreground mb-4 leading-relaxed">
-                      {experience.description}
-                    </p>
-                    
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-foreground mb-2">Key Achievements:</h4>
-                      <ul className="space-y-1">
-                        {experience.achievements.map((achievement, achievementIndex) => (
-                          <li key={achievementIndex} className="flex items-start text-sm text-muted-foreground">
-                            <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            <span>{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                  <div className="hidden md:block" />
+                </article>
+              );
+            })}
           </div>
         </div>
       </div>
