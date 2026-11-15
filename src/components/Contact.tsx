@@ -12,7 +12,6 @@ import {
   MapPin,
   Phone,
   Send,
-  Sparkles,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
@@ -113,35 +112,20 @@ const Contact = () => {
             Get In <span className="gradient-hero">Touch</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Have a project in mind, need a developer, or simply want to connect?
-            I’d love to hear what you’re working on.
+            Have a project to discuss or an opportunity to share? Send me a
+            message and let’s start a conversation.
           </p>
         </div>
 
         <div className="grid items-start gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
-          <div className="space-y-8">
-            <div className="rounded-2xl border border-hairline bg-card/80 p-6 shadow-sm backdrop-blur-sm md:p-7">
-              <div className="mb-5 flex items-center gap-3">
-                <div className="grid h-11 w-11 place-items-center rounded-xl bg-accent text-accent-foreground">
-                  <Sparkles className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="font-semibold">Let’s make something useful.</p>
-                  <p className="text-xs text-muted-foreground">From first idea to deployed product</p>
-                </div>
-              </div>
-              <p className="text-sm leading-7 text-muted-foreground">
-                I work on websites, web applications, and practical digital
-                solutions. Share a little about your goals and we can explore
-                the best way to bring them to life.
+          <div className="space-y-7">
+            <div className="px-1">
+              <p className="mb-2 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Contact details</p>
+              <h3 className="text-2xl font-bold tracking-tight md:text-3xl">Let’s talk.</h3>
+              <p className="mt-3 max-w-md text-sm leading-7 text-muted-foreground">
+                Whether it’s a project, a role, or a potential collaboration,
+                choose the easiest way to reach me. I’m always happy to hear from you.
               </p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {["Web development", "Full-stack projects", "Collaboration"].map((item) => (
-                  <span key={item} className="rounded-full border border-hairline bg-secondary/70 px-3 py-1.5 text-xs font-medium text-secondary-foreground">
-                    {item}
-                  </span>
-                ))}
-              </div>
             </div>
 
             <div className="space-y-3">
@@ -162,24 +146,27 @@ const Contact = () => {
                 );
 
                 return info.href ? (
-                  <a key={info.label} href={info.href} className="group flex items-center gap-4 rounded-xl border border-transparent p-3 transition-all hover:border-hairline hover:bg-card/80">
+                  <a key={info.label} href={info.href} className="group flex items-center gap-4 rounded-2xl border border-hairline bg-card/65 p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:bg-card hover:shadow-md md:p-5">
                     {content}
                   </a>
                 ) : (
-                  <div key={info.label} className="flex items-center gap-4 rounded-xl border border-transparent p-3">
+                  <div key={info.label} className="flex items-center gap-4 rounded-2xl border border-hairline bg-card/65 p-4 shadow-sm md:p-5">
                     {content}
                   </div>
                 );
               })}
             </div>
 
-            <div className="border-t border-hairline pt-6">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">Find me online</p>
+            <div className="border-t border-hairline pt-7">
+              <div className="mb-4">
+                <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">Elsewhere on the web</p>
+                <p className="mt-1 text-sm text-muted-foreground">Explore my work and connect with me professionally.</p>
+              </div>
               <div className="grid gap-3 sm:grid-cols-2">
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
                   return (
-                    <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 rounded-xl border border-hairline bg-card/70 p-4 transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:bg-card">
+                    <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 rounded-2xl border border-hairline bg-card/75 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-card hover:shadow-md">
                       <Icon className="h-5 w-5" />
                       <span className="min-w-0 flex-1">
                         <span className="block text-sm font-semibold">{social.label}</span>
@@ -193,15 +180,15 @@ const Contact = () => {
             </div>
           </div>
 
-          <Card className="overflow-hidden rounded-2xl border-hairline bg-card/95 shadow-xl shadow-foreground/5">
-            <div className="h-1.5 w-full bg-accent" />
+          <Card className="overflow-hidden rounded-3xl border-hairline bg-card/95 shadow-2xl shadow-foreground/10">
+            <div className="h-1.5 w-full bg-gradient-to-r from-accent via-accent/70 to-primary/20" />
             <CardHeader className="px-6 pb-2 pt-7 md:px-8">
               <div className="mb-2 flex h-11 w-11 items-center justify-center rounded-xl bg-secondary">
                 <Send className="h-5 w-5" />
               </div>
-              <CardTitle className="text-2xl tracking-tight">Send me a message</CardTitle>
-              <CardDescription className="text-sm leading-relaxed">
-                Tell me a bit about yourself and what you have in mind. I’ll be in touch.
+              <CardTitle className="text-2xl tracking-tight md:text-3xl">Send me a message</CardTitle>
+              <CardDescription className="max-w-md text-sm leading-relaxed">
+                Complete the form below with a few details. Your message will be sent directly to my inbox.
               </CardDescription>
             </CardHeader>
 
