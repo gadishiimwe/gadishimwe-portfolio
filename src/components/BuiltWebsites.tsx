@@ -1,7 +1,9 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Globe, Sparkles } from "lucide-react";
+import { ArrowUpRight, Globe } from "lucide-react";
+import bohoRestaurantPreview from "@/assets/boho-restaurant-preview.webp";
+import deltaTwoConstructionPreview from "@/assets/delta-two-construction-preview.webp";
 
 const BuiltWebsites = () => {
   const websites = [
@@ -22,48 +24,49 @@ const BuiltWebsites = () => {
       id: "restaurant-website",
       title: "BOHO Restaurant",
       description: "Elegant restaurant website with menu display, reservations, and online ordering.",
-      image: "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwE9gYq9MbXODyxw4MjgzXUvwl0T7Un23D5c5MBulInolDvVjbLU1s9XAJ3PKqpWzxIBYZP8QxNHFKUutKMJnlAD3wOeSrE7hmYpNNw0J0PbwoQYJzZseKCLHu6Pz6dNObh8S49=s680-w680-h510-rw",
+      image: bohoRestaurantPreview,
       technologies: ["React", "Node.js", "Payment Integration", "CMS"],
       liveUrl: "https://www.boho.rw/",
       category: "Restaurant"
     },
-
     {
       id: "delta-2-construction",
       title: "Delta 2 Construction Company",
       description: "Professional construction company website showcasing services, projects, and contact information.",
-      image: "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzLf875WoFBz8bpK1Z_6gQwKxzzl4ib8dqVIcHvDnFi-2VZJVhGeF_CAt5j1be6NlY-fjGv32Zmo2mXJakyN0xvl3J0dCd5ecNHgYqtckn4UzvneyeWSnznwh1povmC4Jk94ZA=s680-w680-h510-rw",
+      image: deltaTwoConstructionPreview,
       technologies: ["React", "Responsive Design"],
       liveUrl: "https://delta2constract.vercel.app/",
       category: "Construction"
     },
-
-    
-
   ];
 
   return (
-    <section id="built-websites" className="py-20 bg-background">
-      <div className="container mx-auto px-6 max-w-5xl">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Built Websites</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Professional websites I've built for clients across various industries, from spas to e-commerce platforms
-          </p>
+    <section id="built-websites" className="py-24 bg-background">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <div className="mb-5 flex items-center gap-3" aria-hidden="true">
+              <span className="h-px w-10 bg-accent/70" />
+              <span className="h-1.5 w-1.5 rounded-full bg-accent/70" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Built Websites</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Professional websites I've built for clients across various industries, from spas to e-commerce platforms
+            </p>
+          </div>
+          <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground md:pb-1">
+            <span className="text-2xl font-medium tracking-tight text-foreground">0{websites.length}</span>
+            <span>Live websites</span>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {websites.map((website, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {websites.map((website) => (
             <Card
-              key={index}
-              className="gradient-card hover:border-foreground/25 transition-colors duration-200 overflow-hidden group relative"
+              key={website.id}
+              className="group relative flex h-full flex-col overflow-hidden rounded-2xl border-hairline bg-card transition-[transform,border-color,background-color] duration-300 hover:-translate-y-1 hover:border-accent/70 focus-within:border-accent/70"
             >
-              <div className="absolute top-4 right-4 z-10">
-                <div className="bg-primary/90 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Sparkles className="w-4 h-4 text-primary-foreground" />
-                </div>
-              </div>
-              <div className="aspect-video overflow-hidden relative">
+              <div className="aspect-[16/10] overflow-hidden relative bg-secondary">
                 {website.images ? (
                   <div className="relative w-full h-full">
                     {website.images.map((img, imgIndex) => (
@@ -71,9 +74,11 @@ const BuiltWebsites = () => {
                         key={imgIndex}
                         src={img}
                         alt={`${website.title} - Image ${imgIndex + 1}`}
-                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-                          imgIndex === 0 ? 'opacity-100' : 'opacity-0 hover:opacity-100'
-                        } group-hover:scale-[1.02]`}
+                        loading="lazy"
+                        decoding="async"
+                        className={`absolute inset-0 w-full h-full object-cover transition-[opacity,transform] duration-500 ${
+                          imgIndex === 0 ? "opacity-100" : "opacity-0 hover:opacity-100"
+                        } group-hover:scale-[1.025]`}
                         style={{ zIndex: website.images.length - imgIndex }}
                       />
                     ))}
@@ -81,39 +86,49 @@ const BuiltWebsites = () => {
                 ) : (
                   <img
                     src={website.image}
-                    alt={website.title}
-                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                    alt={`${website.title} website preview`}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.025]"
                   />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute top-4 left-4 z-10">
-                  <Badge variant="secondary" className="bg-foreground/80 text-primary-foreground border-0">
+                  <Badge variant="secondary" className="rounded-full border-hairline bg-background/90 text-foreground backdrop-blur-sm">
                     {website.category}
                   </Badge>
                 </div>
+                <div className="absolute top-4 right-4 z-10 grid h-9 w-9 place-items-center rounded-full border-hairline bg-background/90 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100">
+                  <ArrowUpRight className="h-4 w-4" />
+                </div>
+                <div className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-accent/70 transition-transform duration-300 group-hover:scale-x-100" />
               </div>
-              <CardHeader className="pb-3">
-                <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300">{website.title}</CardTitle>
-                <CardDescription className="text-muted-foreground">
+              <CardHeader className="flex-1 pb-4">
+                <CardTitle className="text-xl leading-snug transition-colors duration-300 group-hover:text-foreground">
+                  {website.title}
+                </CardTitle>
+                <CardDescription className="leading-relaxed text-muted-foreground">
                   {website.description}
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {website.technologies.map((tech, techIndex) => (
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {website.technologies.map((tech) => (
                     <Badge
-                      key={techIndex}
+                      key={tech}
                       variant="secondary"
-                      className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+                      className="rounded-full border-hairline bg-secondary/60 text-xs font-normal text-secondary-foreground transition-colors duration-200 hover:bg-secondary"
                     >
                       {tech}
                     </Badge>
                   ))}
                 </div>
-                <Button size="sm" variant="hero" className="w-full" asChild>
-                  <a href={website.liveUrl} target="_blank" rel="noopener noreferrer">
-                    <Globe className="w-4 h-4 mr-2" />
-                    Visit Website
+                <Button size="sm" variant="hero-outline" className="h-11 w-full justify-between rounded-full border-hairline px-5" asChild>
+                  <a href={website.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${website.title}`}>
+                    <span className="flex items-center gap-2">
+                      <Globe className="h-4 w-4" />
+                      Visit Website
+                    </span>
+                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </Button>
               </CardContent>
