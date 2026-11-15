@@ -19,7 +19,8 @@ type Project = {
 };
 
 const Projects = () => {
-  const [showAllProjects, setShowAllProjects] = useState(false);
+  const [showAllLiveProjects, setShowAllLiveProjects] = useState(false);
+  const [showAllDevelopmentProjects, setShowAllDevelopmentProjects] = useState(false);
   const projects: Project[] = [
     { id: "bamboo-rooftop", title: "Bamboo Rooftop", description: "A rooftop restaurant at Kigali’s 2000 Hotel, bringing together Asian-fusion, Chinese, Western, and Rwandan cuisine with city views and table reservations.", image: ["https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/bf/49/d3/our-night-view.jpg?h=1800&s=1&w=2400"], technologies: ["React", "Responsive Design", "Web Development"], liveUrl: "https://bamboorooftop.vercel.app/", type: "Hospitality Website", clientPreview: true, featured: true },
     { id: "employipay", title: "EmployiPay", description: "A payroll and HR automation platform designed to simplify salary administration and everyday workforce operations, with a focused digital experience for managing people and payroll.", image: ["https://i.pinimg.com/736x/5b/c3/ce/5bc3ceda613b418cf8a829899b1fc54f.jpg"], technologies: ["TypeScript", "React", "Payroll", "Business Software"], liveUrl: "https://employipay.vercel.app/", type: "Business Platform", featured: true },
@@ -134,19 +135,27 @@ const Projects = () => {
             <div><h3 className="text-2xl font-semibold tracking-tight">Deployed apps & platforms</h3><p className="mt-2 text-sm text-muted-foreground">Independent apps and platforms hosted online.</p></div>
             <span className="font-mono text-xs text-muted-foreground">{String(liveProjects.length).padStart(2, "0")} items</span>
           </div>
-          <ProjectsGrid items={showAllProjects ? liveProjects : liveProjects.slice(0, 6)} />
+          <ProjectsGrid items={showAllLiveProjects ? liveProjects : liveProjects.slice(0, 6)} />
+          {liveProjects.length > 6 && (
+            <div className="mt-8 flex justify-center">
+              <Button variant="outline" className="rounded-full px-7" onClick={() => setShowAllLiveProjects((current) => !current)}>
+                {showAllLiveProjects ? "Show fewer" : `View all ${liveProjects.length} deployed apps`}
+                <ArrowUpRight className={`ml-2 h-4 w-4 transition-transform ${showAllLiveProjects ? "rotate-[-45deg]" : ""}`} />
+              </Button>
+            </div>
+          )}
         </div>
         <div className="border-t border-hairline pt-10">
           <div className="mb-6 flex items-end justify-between gap-4">
             <div><div className="mb-2 flex items-center gap-2 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground"><Clock3 className="h-3.5 w-3.5" />Work in progress</div><h3 className="text-2xl font-semibold tracking-tight">Currently building</h3><p className="mt-2 text-sm text-muted-foreground">Early-stage products and experiments — clearly marked as in development.</p></div>
             <span className="font-mono text-xs text-muted-foreground">{String(inDevelopmentProjects.length).padStart(2, "0")} items</span>
           </div>
-          <ProjectsGrid items={showAllProjects ? inDevelopmentProjects : inDevelopmentProjects.slice(0, 3)} startIndex={liveProjects.length} />
-          {(liveProjects.length > 6 || inDevelopmentProjects.length > 3) && (
-            <div className="mt-10 flex justify-center">
-              <Button variant="outline" className="rounded-full px-7" onClick={() => setShowAllProjects((current) => !current)}>
-                {showAllProjects ? "Show fewer projects" : `View all ${featuredProjects.length} projects`}
-                <ArrowUpRight className={`ml-2 h-4 w-4 transition-transform ${showAllProjects ? "rotate-[-45deg]" : ""}`} />
+          <ProjectsGrid items={showAllDevelopmentProjects ? inDevelopmentProjects : inDevelopmentProjects.slice(0, 3)} startIndex={liveProjects.length} />
+          {inDevelopmentProjects.length > 3 && (
+            <div className="mt-8 flex justify-center">
+              <Button variant="outline" className="rounded-full px-7" onClick={() => setShowAllDevelopmentProjects((current) => !current)}>
+                {showAllDevelopmentProjects ? "Show fewer" : `View all ${inDevelopmentProjects.length} in-development projects`}
+                <ArrowUpRight className={`ml-2 h-4 w-4 transition-transform ${showAllDevelopmentProjects ? "rotate-[-45deg]" : ""}`} />
               </Button>
             </div>
           )}
