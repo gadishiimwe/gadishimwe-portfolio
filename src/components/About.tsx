@@ -1,4 +1,4 @@
-import AutoPortraitReveal from "@/components/AutoPortraitReveal";
+import profileImage from "@/assets/gad-profile-main.jpg";
 import {
   ArrowDownRight,
   ArrowUpRight,
@@ -65,7 +65,21 @@ const About = () => {
         <div className="grid items-start gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
           <div className="relative mx-auto w-full max-w-md lg:mx-0">
             <div className="absolute -left-3 -top-3 h-full w-full border border-foreground/20" />
-            <AutoPortraitReveal />
+            <div className="relative aspect-[4/5] overflow-hidden bg-secondary">
+              <img
+                src={profileImage}
+                alt="Gad Ishimwe, full-stack developer"
+                className="h-full w-full object-cover object-center transition-transform duration-700 hover:scale-[1.03]"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent p-6 pt-24 text-white">
+                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/70">The builder</p>
+                <h3 className="mt-1 text-3xl font-bold tracking-tight">Gad Ishimwe</h3>
+                <div className="mt-2 flex items-center gap-2 text-sm text-white/80">
+                  <MapPin className="h-4 w-4" />
+                  Kigali, Rwanda
+                </div>
+              </div>
+            </div>
 
             <div className="mt-5 flex items-center justify-between gap-4 border-y border-hairline py-4">
               <div className="flex items-center gap-2">
