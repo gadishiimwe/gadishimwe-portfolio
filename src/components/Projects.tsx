@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, Github, Sparkles, ExternalLink, Clock3 } from "lucide-react";
+import { ArrowUpRight, Github, ExternalLink, Clock3 } from "lucide-react";
 
 type Project = {
   id: string;
