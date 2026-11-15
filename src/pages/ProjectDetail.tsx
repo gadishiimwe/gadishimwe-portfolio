@@ -231,6 +231,71 @@ const ProjectDetail = () => {
         "https://i.pinimg.com/1200x/77/be/e1/77bee11d4d712fd95a2d04c850515aff.jpg"
       ]
     }
+    {
+      id: "gad-vision-ai",
+      title: "Gad Vision AI",
+      description: "An experimental camera-powered creative tool exploring how computer vision can turn a person's movements and the world around them into on-screen drawing.",
+      fullDescription: "Gad Vision AI is an experimental project exploring a more natural way to create digital art using a camera. The idea is to let people interact with a visual canvas through movement and gestures, making creative interaction feel immediate and accessible. This project is presented as an in-development experiment; the page describes its direction rather than claiming a finished product.",
+      image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1600&q=85",
+      technologies: ["AI", "Computer Vision", "Camera Interaction"],
+      features: ["Camera-based visual interaction", "Gesture-driven drawing experiments", "A real-time creative canvas", "Exploration of accessible, hands-free interaction"],
+      challenges: ["Reliable camera input across devices", "Interpreting movement consistently", "Keeping drawing interactions responsive", "Designing a simple experience for first-time users"],
+      date: "In development",
+      status: "In development",
+      gallery: []
+    },
+    {
+      id: "ikinyarai",
+      title: "IkinyarAI",
+      description: "A Kinyarwanda-first AI assistant concept designed to make conversational AI more useful and natural for Kinyarwanda speakers.",
+      fullDescription: "IkinyarAI is a concept for a Kinyarwanda-first AI assistant. Its goal is to reduce language barriers by helping people ask questions, understand information, and interact with AI in the language they use every day. The project is at the concept and exploration stage; capabilities and supported use cases will be refined as development progresses.",
+      image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1600&q=85",
+      technologies: ["AI", "Kinyarwanda", "Language Technology"],
+      features: ["Kinyarwanda-first conversational experience", "Question answering and explanations", "Language-aware user experience", "Potential support for bilingual interactions"],
+      challenges: ["Quality and availability of Kinyarwanda language data", "Accuracy and cultural context", "Evaluating responses with native speakers", "Building trust through clear limitations"],
+      date: "Concept / In development",
+      status: "In development",
+      gallery: []
+    },
+    {
+      id: "queueless",
+      title: "QueueLess",
+      description: "A digital queue concept that lets visitors take a number remotely and follow their place in line before arriving at a service center.",
+      fullDescription: "QueueLess explores a simpler way for people to wait for services at places such as clinics, banks, and service centers. Visitors could join a queue remotely, see their position, and time their arrival more conveniently. The current portfolio entry describes the product direction and planned experience, not a live queue service.",
+      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=85",
+      technologies: ["Web App", "Queue Management", "Notifications"],
+      features: ["Remote queue-number requests", "Live position and estimated wait visibility", "Simple staff queue controls", "Arrival guidance and status updates"],
+      challenges: ["Keeping queue positions synchronized", "Handling walk-ins and remote visitors together", "Making wait estimates useful and honest", "Designing a workflow staff can operate easily"],
+      date: "Concept / In development",
+      status: "In development",
+      gallery: []
+    },
+    {
+      id: "gad-ai-desktop",
+      title: "GAD AI Desktop Assistant",
+      description: "A planned Windows assistant for handling everyday computer tasks through natural-language commands and practical automation.",
+      fullDescription: "GAD AI Desktop Assistant is a planned Windows-focused assistant that aims to make common computer tasks easier through natural-language instructions. The direction includes quick actions and carefully scoped desktop automation, with user control and clear confirmation for sensitive actions. It is currently a project in development, not a released desktop application.",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=85",
+      technologies: ["AI Assistant", "Windows", "Automation"],
+      features: ["Natural-language task requests", "Quick access to common desktop actions", "User-confirmed automation for sensitive steps", "A Windows-oriented assistant interface"],
+      challenges: ["Safe permissions and action boundaries", "Reliable execution across Windows environments", "Clear feedback when tasks succeed or fail", "Balancing convenience with user control"],
+      date: "Planned / In development",
+      status: "In development",
+      gallery: []
+    },
+    {
+      id: "rwanda-china-trade",
+      title: "Rwanda–China Trade Platform",
+      description: "A cross-border sourcing concept to help Rwanda-based buyers discover suppliers, compare products, and follow shipments from China.",
+      fullDescription: "The Rwanda–China Trade Platform is a concept for making cross-border sourcing more transparent and easier to follow. The proposed experience brings product discovery, supplier comparison, order visibility, shipment tracking, and richer product previews into one place. It is still being explored, and no supplier network or shipment service is being represented as operational yet.",
+      image: "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1600&q=85",
+      technologies: ["E-commerce", "Trade", "Product Discovery", "Shipment Tracking"],
+      features: ["Product discovery and comparison", "Supplier profiles and verification direction", "Order progress visibility", "Shipment tracking journey", "Richer product previews such as photos and video"],
+      challenges: ["Building supplier trust and verification", "Reliable logistics status integrations", "Cross-border payments and dispute handling", "Accurate landed-cost and delivery information"],
+      date: "Concept / In development",
+      status: "In development",
+      gallery: []
+    },
   ];
 
   const project = projects.find(p => p.id === projectId);
@@ -308,8 +373,14 @@ const ProjectDetail = () => {
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
                 <Calendar className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-primary">{project.date}</span>
-                <Trophy className="w-4 h-4 text-accent ml-2" />
+                {project.status ? (
+                  <span className="text-sm font-medium text-primary">{project.status}</span>
+                ) : (
+                  <>
+                    <span className="text-sm font-medium text-primary">{project.date}</span>
+                    <Trophy className="w-4 h-4 text-accent ml-2" />
+                  </>
+                )}
               </div>
               <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
                 {project.title}
@@ -352,12 +423,14 @@ const ProjectDetail = () => {
                   </a>
                 </Button>
               )}
-              <Button size="lg" variant="outline" className="hover:scale-105 transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:border-primary shadow-lg hover:shadow-xl" asChild>
-                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                  <Github className="w-5 h-5 mr-2" />
-                  View Source Code
-                </a>
-              </Button>
+{project.githubUrl && (
+                <Button size="lg" variant="outline" className="hover:scale-105 transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:border-primary shadow-lg hover:shadow-xl" asChild>
+                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                    <Github className="w-5 h-5 mr-2" />
+                    View Source Code
+                  </a>
+                </Button>
+              )}
             </div>
           </div>
         </div>
