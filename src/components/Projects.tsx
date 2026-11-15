@@ -4,8 +4,21 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpRight, Github, Eye, Sparkles, ExternalLink, Clock3 } from "lucide-react";
 import { Link } from "react-router-dom";
 
+type Project = {
+  id: string;
+  title: string;
+  description: string;
+  image: string[];
+  technologies: string[];
+  liveUrl?: string;
+  githubUrl?: string;
+  type: string;
+  featured?: boolean;
+  status?: string;
+};
+
 const Projects = () => {
-  const projects = [
+  const projects: Project[] = [
     { id: "bamboo-rooftop", title: "Bamboo Rooftop", description: "A polished digital presence for a rooftop dining destination, showcasing its atmosphere and guest experience.", image: ["https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Responsive Design", "Web Development"], liveUrl: "https://bamboorooftop.vercel.app/", type: "Hospitality Website", featured: true },
     { id: "employipay", title: "EmployiPay", description: "A full-stack payroll and HR platform designed to simplify employee management and business workflows.", image: ["https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=85"], technologies: ["TypeScript", "React", "Payroll", "Business Software"], liveUrl: "https://employipay.vercel.app/", type: "Business Platform", featured: true },
     { id: "akuni", title: "Akuni", description: "A responsive website project with a clean, modern presentation across desktop and mobile.", image: ["https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85"], technologies: ["Web Design", "Responsive UI", "Development"], liveUrl: "https://akuni.vercel.app/", type: "Website", featured: true },
@@ -15,6 +28,7 @@ const Projects = () => {
     { id: "tung-chinese", title: "Tung Chinese", description: "A restaurant website built to introduce the dining experience and make key information easy to find.", image: ["https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Responsive Design", "Web Development"], liveUrl: "https://tungchinese.vercel.app/", type: "Restaurant Website" },
     { id: "delta-two", title: "Delta Two Construction", description: "A corporate web presence for a construction business, presenting its services with a professional layout.", image: ["https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Business Website", "Responsive UI"], liveUrl: "https://delta2constract.vercel.app/", type: "Corporate Website" },
     { id: "boho-restaurant", title: "Boho Restaurant", description: "A restaurant website focused on atmosphere, visual storytelling, and a smooth browsing experience.", image: ["https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=85"], technologies: ["Web Design", "Responsive Design"], liveUrl: "https://www.boho.rw/", type: "Restaurant Website" },
+    { id: "personal-portfolio", title: "Gad Ishimwe — Portfolio", description: "My personal developer portfolio, bringing together selected client websites, software projects, and experiments.", image: ["https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "TypeScript", "Tailwind CSS", "Vercel"], liveUrl: "https://gadishimwe.vercel.app/", type: "Personal Website" },
     { id: "gadbot", title: "GadBot", description: "An AI chatbot built to provide a conversational interface for asking questions and getting assistance.", image: ["https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Node.js", "AI API", "Vercel"], liveUrl: "https://gadbot.vercel.app/", githubUrl: "https://github.com/gadishiimwe/nextjs-ai-chatbot", type: "AI & Automation", featured: true },
     { id: "gadvoiceai", title: "GadVoice AI", description: "A browser-based voice experience exploring speech recognition and voice-first interaction.", image: ["https://images.unsplash.com/photo-1590602847861-f357a9332reno?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Web Speech API", "JavaScript"], liveUrl: "https://gadvoiceai.vercel.app/", githubUrl: "https://github.com/gadishiimwe/gadvoiceai", type: "AI & Voice" },
     { id: "student-management-system", title: "Student Management System", description: "A full-stack student administration system with authentication and database-backed records.", image: ["https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Node.js", "MySQL", "Authentication"], githubUrl: "https://github.com/gadishiimwe/student-management-system", type: "Education" },
@@ -23,6 +37,7 @@ const Projects = () => {
     { id: "gad-vision-ai", title: "Gad Vision AI", description: "An experimental camera-based AI experience exploring visual interaction, recognition, and drawing in real time.", image: ["https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85"], technologies: ["AI", "Computer Vision", "Camera Interaction"], type: "In Development", status: "In development" },
     { id: "ikinyarai", title: "IkinyarAI", description: "A Kinyarwanda-focused AI assistant concept designed to make conversational AI more accessible to local users.", image: ["https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1200&q=85"], technologies: ["AI", "Kinyarwanda", "Language Technology"], type: "In Development", status: "In development" },
     { id: "queueless", title: "QueueLess", description: "A digital queue concept that lets visitors take a remote number and reduce unnecessary waiting in physical lines.", image: ["https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=85"], technologies: ["Web App", "Queue Management", "Notifications"], type: "In Development", status: "In development" },
+    { id: "gad-ai-desktop", title: "GAD AI Desktop Assistant", description: "A planned Windows assistant exploring natural-language help and practical desktop productivity workflows.", image: ["https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85"], technologies: ["AI Assistant", "Windows", "Automation"], type: "In Development", status: "In development" },
     { id: "rwanda-china-trade", title: "Rwanda–China Trade Platform", description: "A developing marketplace concept for discovering products and making cross-border sourcing more transparent.", image: ["https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1200&q=85"], technologies: ["E-commerce", "Trade", "Product Discovery"], type: "In Development", status: "In development" },
   ];
 
