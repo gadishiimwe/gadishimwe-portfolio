@@ -38,8 +38,8 @@ const Navigation = () => {
   return (
     <nav className={`fixed top-0 inset-x-0 z-50 border-b transition-all duration-300 ${isScrolled ? "backdrop-blur-glass border-hairline py-3" : "border-transparent py-5"}`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="w-11 h-11 rounded-lg bg-accent text-accent-foreground border border-hairline grid place-items-center font-bold tracking-tight hover:bg-accent/80 transition-colors">
-          GI
+        <Link to="/" aria-label="Gad Ishimwe home" className="w-11 h-11 rounded-lg overflow-hidden grid place-items-center transition-transform duration-300 hover:scale-105">
+          <img src="/favicon.ico" alt="Gad Ishimwe logo" className="h-full w-full object-contain" />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
