@@ -242,6 +242,9 @@ const ProjectDetail = () => {
       challenges: ["Reliable camera input across devices", "Interpreting movement consistently", "Keeping drawing interactions responsive", "Designing a simple experience for first-time users"],
       date: "In development",
       status: "In development",
+      liveUrl: undefined,
+      githubUrl: undefined,
+      gallery: [],
     },
     {
       id: "ikinyarai",
@@ -254,6 +257,9 @@ const ProjectDetail = () => {
       challenges: ["Quality and availability of Kinyarwanda language data", "Accuracy and cultural context", "Evaluating responses with native speakers", "Building trust through clear limitations"],
       date: "Concept / In development",
       status: "In development",
+      liveUrl: undefined,
+      githubUrl: undefined,
+      gallery: [],
     },
     {
       id: "queueless",
@@ -266,6 +272,9 @@ const ProjectDetail = () => {
       challenges: ["Keeping queue positions synchronized", "Handling walk-ins and remote visitors together", "Making wait estimates useful and honest", "Designing a workflow staff can operate easily"],
       date: "Concept / In development",
       status: "In development",
+      liveUrl: undefined,
+      githubUrl: undefined,
+      gallery: [],
     },
     {
       id: "gad-ai-desktop",
@@ -278,6 +287,9 @@ const ProjectDetail = () => {
       challenges: ["Safe permissions and action boundaries", "Reliable execution across Windows environments", "Clear feedback when tasks succeed or fail", "Balancing convenience with user control"],
       date: "Planned / In development",
       status: "In development",
+      liveUrl: undefined,
+      githubUrl: undefined,
+      gallery: [],
     },
     {
       id: "rwanda-china-trade",
@@ -290,6 +302,9 @@ const ProjectDetail = () => {
       challenges: ["Building supplier trust and verification", "Reliable logistics status integrations", "Cross-border payments and dispute handling", "Accurate landed-cost and delivery information"],
       date: "Concept / In development",
       status: "In development",
+      liveUrl: undefined,
+      githubUrl: undefined,
+      gallery: [],
     },
   ];
 
@@ -368,14 +383,8 @@ const ProjectDetail = () => {
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
                 <Calendar className="w-4 h-4 text-primary" />
-                {project.status ? (
-                  <span className="text-sm font-medium text-primary">{project.status}</span>
-                ) : (
-                  <>
-                    <span className="text-sm font-medium text-primary">{project.date}</span>
-                    <Trophy className="w-4 h-4 text-accent ml-2" />
-                  </>
-                )}
+<span className="text-sm font-medium text-primary">{project.date}</span>
+                <Trophy className="w-4 h-4 text-accent ml-2" />
               </div>
               <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
                 {project.title}
@@ -472,7 +481,7 @@ const ProjectDetail = () => {
             </div>
 
             {/* Gallery */}
-            {project.gallery && (
+            {project.gallery && project.gallery.length > 0 && (
               <div className="mb-20">
                 <div className="text-center mb-12">
                   <div className="inline-flex items-center gap-3 mb-4">
