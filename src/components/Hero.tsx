@@ -51,7 +51,7 @@ const Hero = () => {
             </p>
           </div>
           <p className="text-muted-foreground leading-relaxed animate-rise" style={{ animationDelay: "0.35s" }}>
-            I'm a Full-stack developer from Rwanda with hands-on experience building and deploying real-world applications. As a skilled web developer in Rwanda, I've completed 7+ projects, including chatbots, management systems, and dynamic platforms. I love solving problems through clean, scalable code and I'm eager to contribute to remote teams worldwide.
+            I'm a full-stack developer based in Kigali, Rwanda, with hands-on experience building and deploying real-world applications. I've completed 7+ projects, including chatbots, management systems, and digital platforms. I enjoy solving practical problems through clean, maintainable code and collaborating with remote teams worldwide.
           </p>
         </div>
 
