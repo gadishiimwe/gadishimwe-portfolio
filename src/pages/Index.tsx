@@ -7,6 +7,7 @@ import BuiltWebsites from "@/components/BuiltWebsites";
 import ProfessionalJourney from "@/components/ProfessionalJourney";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import PortfolioAssistant from "@/components/PortfolioAssistant";
 import { Home, User, Code, Briefcase, Award, Phone } from "lucide-react";
 
 
@@ -38,6 +39,7 @@ const Index = () => {
       <ProfessionalJourney />
       <Contact />
       <Footer />
+      <PortfolioAssistant />
     </div>
   );
 };
