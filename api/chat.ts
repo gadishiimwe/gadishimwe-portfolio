@@ -45,7 +45,7 @@ export default async function handler(req: any, res: any) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const apiKey = process.env.OPENAI_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     return res.status(503).json({
       error: "The AI assistant is not configured yet. Please contact Gad directly using the contact form.",
@@ -69,30 +69,34 @@ export default async function handler(req: any, res: any) {
       return res.status(400).json({ error: "Please enter a message to get started." });
     }
 
-    const upstream = await fetch("https://api.openai.com/v1/chat/completions", {
+    const upstream = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${apiKey}`,
+        "x-goog-api-key": apiKey,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "gpt-4o-mini",
-        temperature: 0.5,
-        max_tokens: 450,
-        messages: [
-          { role: "system", content: portfolioContext },
-          ...messages,
-        ],
+        systemInstruction: {
+          parts: [{ text: portfolioContext }],
+        },
+        contents: messages.map((item: any) => ({
+          role: item.role === "assistant" ? "model" : "user",
+          parts: [{ text: item.content }],
+        })),
+        generationConfig: {
+          temperature: 0.5,
+          maxOutputTokens: 450,
+        },
       }),
     });
 
     const data = await upstream.json();
     if (!upstream.ok) {
-      console.error("OpenAI API error:", data?.error?.message || upstream.status);
+      console.error("Gemini API error:", data?.error?.message || upstream.status);
       return res.status(502).json({ error: "I'm having trouble answering right now. Please try again in a moment." });
     }
 
-    const reply = data?.choices?.[0]?.message?.content?.trim();
+    const reply = data?.candidates?.[0]?.content?.parts?.map((part: any) => part.text || "").join("").trim();
     if (!reply) {
       return res.status(502).json({ error: "I couldn't generate a reply. Please try again." });
     }
