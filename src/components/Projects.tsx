@@ -105,6 +105,15 @@ const Projects = () => {
             <span className="max-w-24 font-mono text-[10px] uppercase leading-relaxed tracking-[0.16em] text-muted-foreground">Selected work</span>
           </div>
         </div>
+        {clientPreviewProjects.length > 0 && (
+          <div className="mb-12">
+            <div className="mb-6 flex items-end justify-between gap-4">
+              <div><h3 className="text-2xl font-semibold tracking-tight">Client website previews</h3><p className="mt-2 text-sm text-muted-foreground">Website builds shared for client review while feedback and final publication are pending.</p></div>
+              <span className="font-mono text-xs text-muted-foreground">{String(clientPreviewProjects.length).padStart(2, "0")} items</span>
+            </div>
+            <ProjectsGrid items={clientPreviewProjects} />
+          </div>
+        )}
         <div className="mb-12">
           <div className="mb-6 flex items-end justify-between gap-4">
             <div><h3 className="text-2xl font-semibold tracking-tight">Deployed apps & platforms</h3><p className="mt-2 text-sm text-muted-foreground">Independent apps and platforms hosted online.</p></div>
