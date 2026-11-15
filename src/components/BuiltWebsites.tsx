@@ -39,15 +39,6 @@ const BuiltWebsites = () => {
   category: "Travel & Tourism"
 },
 
-    {
-      id: "delta-2-construction",
-      title: "Delta 2 Construction Company",
-      description: "Professional construction company website showcasing services, projects, and contact information.",
-      image: deltaTwoConstructionPreview,
-      technologies: ["React", "Responsive Design"],
-      liveUrl: "https://delta2constract.vercel.app/",
-      category: "Construction"
-    },
   ];
 
   return (
@@ -61,12 +52,12 @@ const BuiltWebsites = () => {
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Built Websites</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Professional websites I've built for clients across various industries, from spas to e-commerce platforms
+              Client websites published on their own custom domains — selected work across wellness, travel, and hospitality.
             </p>
           </div>
           <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground md:pb-1">
             <span className="text-2xl font-medium tracking-tight text-foreground">0{websites.length}</span>
-            <span>Live websites</span>
+            <span>Custom-domain websites</span>
           </div>
         </div>
 
