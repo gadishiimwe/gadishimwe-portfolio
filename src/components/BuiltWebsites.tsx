@@ -29,11 +29,21 @@ const BuiltWebsites = () => {
       liveUrl: "https://www.boho.rw/",
       category: "Restaurant"
     },
+  id: "zavora-safaris-website",
+  title: "Zavora Safaris Africa LTD",
+  description: "Luxury Rwanda & East Africa safari website featuring gorilla trekking, safari tours, hotels, meetings & events, car hire, online bookings, and a full admin management system.",
+  image: "https://plain-eeur-prod-public.komododecks.com/202605/14/f3YghPqi2ZsFFqlH3F9X/image.jpg",
+  technologies: ["React", "TypeScript", "Supabase", "Tailwind CSS", "Vercel"],
+  liveUrl: "https://zavorasafaris.com",
+  category: "Travel & Tourism"
+},
+
     {
       id: "delta-2-construction",
       title: "Delta 2 Construction Company",
       description: "Professional construction company website showcasing services, projects, and contact information.",
       image: deltaTwoConstructionPreview,
+      image: "https://i.pinimg.com/736x/c2/69/37/c26937ce4494cc153173138fd70d6cd1.jpg",
       technologies: ["React", "Responsive Design"],
       liveUrl: "https://delta2constract.vercel.app/",
       category: "Construction"
