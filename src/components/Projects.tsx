@@ -14,20 +14,21 @@ type Project = {
   githubUrl?: string;
   type: string;
   featured?: boolean;
+  clientPreview?: boolean;
   status?: string;
 };
 
 const Projects = () => {
   const [showAllProjects, setShowAllProjects] = useState(false);
   const projects: Project[] = [
-    { id: "bamboo-rooftop", title: "Bamboo Rooftop", description: "A polished digital presence for a rooftop dining destination, showcasing its atmosphere and guest experience.", image: ["https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Responsive Design", "Web Development"], liveUrl: "https://bamboorooftop.vercel.app/", type: "Hospitality Website", featured: true },
+    { id: "bamboo-rooftop", title: "Bamboo Rooftop", description: "A polished digital presence for a rooftop dining destination, showcasing its atmosphere and guest experience.", image: ["https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/bf/49/d3/our-night-view.jpg?h=1800&s=1&w=2400"], technologies: ["React", "Responsive Design", "Web Development"], liveUrl: "https://bamboorooftop.vercel.app/", type: "Hospitality Website", clientPreview: true, featured: true },
     { id: "employipay", title: "EmployiPay", description: "A full-stack payroll and HR platform designed to simplify employee management and business workflows.", image: ["https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=85"], technologies: ["TypeScript", "React", "Payroll", "Business Software"], liveUrl: "https://employipay.vercel.app/", type: "Business Platform", featured: true },
-    { id: "akuni", title: "Akuni", description: "A responsive website project with a clean, modern presentation across desktop and mobile.", image: ["https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85"], technologies: ["Web Design", "Responsive UI", "Development"], liveUrl: "https://akuni.vercel.app/", type: "Website", featured: true },
-    { id: "bethesda-holy-church", title: "Bethesda Holy Church", description: "A welcoming online presence for a church community, making its identity and information accessible to visitors.", image: ["https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Responsive Design", "Web Development"], liveUrl: "https://bethesdaholychurch.vercel.app/", type: "Church Website", featured: true },
+    { id: "akuni", title: "Akuni", description: "A responsive website project with a clean, modern presentation across desktop and mobile.", image: ["https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85"], technologies: ["Web Design", "Responsive UI", "Development"], liveUrl: "https://akuni.vercel.app/", type: "Website", clientPreview: true, featured: true },
+    { id: "bethesda-holy-church", title: "Bethesda Holy Church", description: "A welcoming online presence for a church community, making its identity and information accessible to visitors.", image: ["https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Responsive Design", "Web Development"], liveUrl: "https://bethesdaholychurch.vercel.app/", type: "Church Website", clientPreview: true, featured: true },
     { id: "vsky-spa", title: "V&SKY SPA", description: "A premium spa website presenting treatments, services, memberships, and appointment information.", image: ["https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Booking UX", "Responsive Design"], liveUrl: "https://vskyspa.com/", type: "Wellness Website" },
     { id: "zavora-safaris", title: "Zavora Safaris", description: "A travel and safari experience featuring destinations, itineraries, tours, car hire, and booking journeys.", image: ["https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=85"], technologies: ["TypeScript", "React", "PostgreSQL"], liveUrl: "https://www.zavorasafaris.com/", type: "Travel Platform" },
-    { id: "tung-chinese", title: "Tung Chinese", description: "A restaurant website built to introduce the dining experience and make key information easy to find.", image: ["https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Responsive Design", "Web Development"], liveUrl: "https://tungchinese.vercel.app/", type: "Restaurant Website" },
-    { id: "delta-two", title: "Delta Two Construction", description: "A corporate web presence for a construction business, presenting its services with a professional layout.", image: ["https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Business Website", "Responsive UI"], liveUrl: "https://delta2constract.vercel.app/", type: "Corporate Website" },
+    { id: "tung-chinese", title: "Tung Chinese", description: "A restaurant website built to introduce the dining experience and make key information easy to find.", image: ["https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Responsive Design", "Web Development"], liveUrl: "https://tungchinese.vercel.app/", type: "Restaurant Website", clientPreview: true },
+    { id: "delta-two", title: "Delta Two Construction", description: "A corporate web presence for a construction business, presenting its services with a professional layout.", image: ["https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Business Website", "Responsive UI"], liveUrl: "https://delta2constract.vercel.app/", type: "Corporate Website", clientPreview: true },
     { id: "boho-restaurant", title: "Boho Restaurant", description: "A restaurant website focused on atmosphere, visual storytelling, and a smooth browsing experience.", image: ["https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=85"], technologies: ["Web Design", "Responsive Design"], liveUrl: "https://www.boho.rw/", type: "Restaurant Website" },
     { id: "personal-portfolio", title: "Gad Ishimwe — Portfolio", description: "My personal developer portfolio, bringing together selected client websites, software projects, and experiments.", image: ["https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "TypeScript", "Tailwind CSS", "Vercel"], liveUrl: "https://gadishimwe.vercel.app/", type: "Personal Website" },
     { id: "gadbot", title: "GadBot", description: "An AI chatbot built to provide a conversational interface for asking questions and getting assistance.", image: ["https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85"], technologies: ["React", "Node.js", "AI API", "Vercel"], liveUrl: "https://gadbot.vercel.app/", githubUrl: "https://github.com/gadishiimwe/nextjs-ai-chatbot", type: "AI & Automation", featured: true },
@@ -58,7 +59,7 @@ const Projects = () => {
           <CardHeader className="flex-1 space-y-3 px-5 pb-3 pt-5">
             <div className="flex items-start justify-between gap-3">
               <CardTitle className="text-lg leading-snug tracking-tight transition-colors duration-300 group-hover:text-foreground">{project.title}</CardTitle>
-              {project.featured && <span className="mt-0.5 inline-flex shrink-0 items-center gap-1 font-mono text-[9px] uppercase tracking-wider text-muted-foreground"><Sparkles className="h-3 w-3 text-accent-foreground" />Featured</span>}
+              {project.clientPreview && <span className="mt-0.5 inline-flex shrink-0 items-center gap-1 font-mono text-[9px] uppercase tracking-wider text-muted-foreground"><Clock3 className="h-3 w-3" />Client preview</span>}
               {project.status && <span className="mt-0.5 inline-flex shrink-0 items-center gap-1 font-mono text-[9px] uppercase tracking-wider text-muted-foreground"><Clock3 className="h-3 w-3" />Building</span>}
             </div>
             <CardDescription className="min-h-[3rem] text-sm leading-relaxed text-muted-foreground">{project.description}</CardDescription>
@@ -69,7 +70,7 @@ const Projects = () => {
             </div>
             <div className="flex gap-2 border-t border-hairline pt-4">
               {project.liveUrl ? (
-                <Button size="sm" variant="hero" className="h-10 flex-1 rounded-full" asChild><a href={project.liveUrl} target="_blank" rel="noopener noreferrer"><ExternalLink className="mr-2 h-3.5 w-3.5" />Live website</a></Button>
+                <Button size="sm" variant="hero" className="h-10 flex-1 rounded-full" asChild><a href={project.liveUrl} target="_blank" rel="noopener noreferrer"><ExternalLink className="mr-2 h-3.5 w-3.5" />{project.clientPreview ? "Preview website" : "Open project"}</a></Button>
               ) : project.githubUrl ? (
                 <Button size="sm" variant="outline" className="h-10 flex-1 rounded-full" asChild><a href={project.githubUrl} target="_blank" rel="noopener noreferrer"><Github className="mr-2 h-3.5 w-3.5" />View code</a></Button>
               ) : (
@@ -86,7 +87,8 @@ const Projects = () => {
   // Custom-domain client websites are presented in the dedicated Built Websites section.
   const customDomainWebsiteIds = new Set(["vsky-spa", "zavora-safaris", "boho-restaurant"]);
   const featuredProjects = projects.filter((project) => !customDomainWebsiteIds.has(project.id));
-  const liveProjects = featuredProjects.filter((project) => !project.status);
+  const clientPreviewProjects = featuredProjects.filter((project) => project.clientPreview);
+  const liveProjects = featuredProjects.filter((project) => !project.status && !project.clientPreview);
   const inDevelopmentProjects = featuredProjects.filter((project) => project.status);
 
   return (
@@ -95,12 +97,12 @@ const Projects = () => {
         <div className="mb-14 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <div className="mb-5 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground"><span className="h-px w-10 bg-accent" />02 / Selected work</div>
-            <h2 className="text-4xl font-bold tracking-tight md:text-5xl">Featured <span className="gradient-hero">Projects</span></h2>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">Selected software projects, deployed apps, and experiments — from business platforms to practical AI products.</p>
+            <h2 className="text-4xl font-bold tracking-tight md:text-5xl">Selected <span className="gradient-hero">Work</span></h2>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">A mix of client website previews, deployed software, and independent experiments — with each project clearly labelled.</p>
           </div>
           <div className="flex items-center gap-3 border-l border-hairline pl-5 md:mb-1">
             <span className="text-3xl font-semibold tracking-tight">{String(featuredProjects.length).padStart(2, "0")}</span>
-            <span className="max-w-24 font-mono text-[10px] uppercase leading-relaxed tracking-[0.16em] text-muted-foreground">Projects & experiments</span>
+            <span className="max-w-24 font-mono text-[10px] uppercase leading-relaxed tracking-[0.16em] text-muted-foreground">Selected work</span>
           </div>
         </div>
         <div className="mb-12">
