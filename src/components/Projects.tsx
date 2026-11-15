@@ -1,8 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, Github, Eye, Sparkles, ExternalLink, Clock3 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowUpRight, Github, Sparkles, ExternalLink, Clock3 } from "lucide-react";
 
 type Project = {
   id: string;
@@ -75,7 +74,6 @@ const Projects = () => {
                 <div className="flex h-10 flex-1 items-center justify-center rounded-full border border-dashed border-hairline text-xs text-muted-foreground">Currently in development</div>
               )}
               {project.githubUrl && project.liveUrl && <Button size="sm" variant="hero-outline" className="h-10 rounded-full px-4" asChild><a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label={"View " + project.title + " source code"}><Github className="h-4 w-4" /></a></Button>}
-              {!project.status && <Button size="sm" variant="outline" className="h-10 rounded-full px-4" asChild><Link to={"/project/" + project.id + "#top"} aria-label={"Read more about " + project.title}><Eye className="h-4 w-4" /></Link></Button>}
             </div>
           </CardContent>
         </Card>
@@ -83,8 +81,11 @@ const Projects = () => {
     </div>
   );
 
-  const liveProjects = projects.filter((project) => !project.status);
-  const inDevelopmentProjects = projects.filter((project) => project.status);
+  // Custom-domain client websites are presented in the dedicated Built Websites section.
+  const customDomainWebsiteIds = new Set(["vsky-spa", "zavora-safaris", "boho-restaurant"]);
+  const featuredProjects = projects.filter((project) => !customDomainWebsiteIds.has(project.id));
+  const liveProjects = featuredProjects.filter((project) => !project.status);
+  const inDevelopmentProjects = featuredProjects.filter((project) => project.status);
 
   return (
     <section id="projects" className="relative overflow-hidden bg-section-bg py-24 md:py-28">
@@ -93,16 +94,16 @@ const Projects = () => {
           <div className="max-w-2xl">
             <div className="mb-5 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground"><span className="h-px w-10 bg-accent" />02 / Selected work</div>
             <h2 className="text-4xl font-bold tracking-tight md:text-5xl">Featured <span className="gradient-hero">Projects</span></h2>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">Websites, platforms, and experiments I've worked on — from business solutions and digital experiences to practical AI products.</p>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">Selected software projects, deployed apps, and experiments — from business platforms to practical AI products.</p>
           </div>
           <div className="flex items-center gap-3 border-l border-hairline pl-5 md:mb-1">
-            <span className="text-3xl font-semibold tracking-tight">{String(projects.length).padStart(2, "0")}</span>
+            <span className="text-3xl font-semibold tracking-tight">{String(featuredProjects.length).padStart(2, "0")}</span>
             <span className="max-w-24 font-mono text-[10px] uppercase leading-relaxed tracking-[0.16em] text-muted-foreground">Projects & experiments</span>
           </div>
         </div>
         <div className="mb-12">
           <div className="mb-6 flex items-end justify-between gap-4">
-            <div><h3 className="text-2xl font-semibold tracking-tight">Live websites & projects</h3><p className="mt-2 text-sm text-muted-foreground">Selected work you can explore right now.</p></div>
+            <div><h3 className="text-2xl font-semibold tracking-tight">Deployed apps & platforms</h3><p className="mt-2 text-sm text-muted-foreground">Independent apps and platforms hosted online.</p></div>
             <span className="font-mono text-xs text-muted-foreground">{String(liveProjects.length).padStart(2, "0")} items</span>
           </div>
           <ProjectsGrid items={liveProjects} />
