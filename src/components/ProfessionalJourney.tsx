@@ -75,7 +75,7 @@ const ProfessionalJourney = () => {
                 
                 {/* Content card */}
                 <div className={`ml-12 md:ml-0 md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
-                  <div className="gradient-card p-6 rounded-xl shadow-card border border-border/50 backdrop-blur-sm">
+                  <div className="gradient-card p-6 rounded-xl">
                     <div className="flex items-center justify-between mb-4">
                       <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                         experience.type === 'Current' ? 'bg-primary text-primary-foreground' :

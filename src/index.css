@@ -52,9 +52,9 @@
     --gradient-card: linear-gradient(180deg, hsl(var(--card)), hsl(var(--card)));
     --gradient-button: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent)));
 
-    --shadow-glow: 5px 5px 0 0 hsl(var(--foreground));
-    --shadow-card: 4px 4px 0 0 hsl(var(--foreground));
-    --shadow-nav: 0 1px 0 0 hsl(var(--hairline));
+    --shadow-glow: none;
+    --shadow-card: none;
+    --shadow-nav: none;
 
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -127,15 +127,17 @@
 @layer utilities {
   .gradient-hero {
     color: hsl(var(--foreground));
-    background: linear-gradient(transparent 62%, hsl(var(--accent)) 62%, hsl(var(--accent)) 92%, transparent 92%);
-    padding: 0 0.08em;
+    background: linear-gradient(transparent 73%, hsl(var(--accent) / 0.62) 73%, hsl(var(--accent) / 0.62) 88%, transparent 88%);
+    padding: 0 0.04em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
   .gradient-button { background: var(--gradient-button); }
-  .gradient-card { background: var(--gradient-card); border: 1.5px solid hsl(var(--foreground)); }
+  .gradient-card { background: var(--gradient-card); border: 1px solid hsl(var(--hairline)); }
   .shadow-glow { box-shadow: var(--shadow-glow); }
   .shadow-card { box-shadow: var(--shadow-card); }
   .shadow-nav { box-shadow: var(--shadow-nav); }
-  .shadow-brutal { box-shadow: 4px 4px 0 0 hsl(var(--foreground)); }
+  .shadow-brutal { box-shadow: none; }
   .transition-smooth { transition: var(--transition-smooth); }
   .transition-bounce { transition: var(--transition-bounce); }
   .text-glow { text-shadow: none; }
@@ -150,7 +152,5 @@
   }
 }
 
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.animate-marquee { animation: marquee 30s linear infinite; }
 @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 .animate-rise { animation: rise 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
