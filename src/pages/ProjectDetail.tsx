@@ -230,7 +230,7 @@ const ProjectDetail = () => {
         "https://i.pinimg.com/1200x/34/ff/21/34ff21ec279c1002cd21abfbc9aa13c7.jpg",
         "https://i.pinimg.com/1200x/77/be/e1/77bee11d4d712fd95a2d04c850515aff.jpg"
       ]
-    }
+    },
     {
       id: "gad-vision-ai",
       title: "Gad Vision AI",
