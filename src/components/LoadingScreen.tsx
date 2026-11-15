@@ -26,10 +26,10 @@ const LoadingScreen = ({ onLoadingComplete }: { onLoadingComplete: () => void })
     }
 
     const timers = bootLines.map((_, index) =>
-      window.setTimeout(() => setVisibleLines(index + 1), 500 + index * 1800)
+      window.setTimeout(() => setVisibleLines(index + 1), 300 + index * 700)
     );
-    const finish = window.setTimeout(() => setIsExiting(true), 9400);
-    const complete = window.setTimeout(() => onLoadingCompleteRef.current(), 10000);
+    const finish = window.setTimeout(() => setIsExiting(true), 4600);
+    const complete = window.setTimeout(() => onLoadingCompleteRef.current(), 5000);
 
     return () => {
       timers.forEach(window.clearTimeout);
