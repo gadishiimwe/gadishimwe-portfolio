@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -72,8 +73,12 @@ const Projects = () => {
                 <Button size="sm" variant="hero" className="h-10 flex-1 rounded-full" asChild><a href={project.liveUrl} target="_blank" rel="noopener noreferrer"><ExternalLink className="mr-2 h-3.5 w-3.5" />{project.clientPreview ? "Preview website" : "Open project"}</a></Button>
               ) : project.githubUrl ? (
                 <Button size="sm" variant="outline" className="h-10 flex-1 rounded-full" asChild><a href={project.githubUrl} target="_blank" rel="noopener noreferrer"><Github className="mr-2 h-3.5 w-3.5" />View code</a></Button>
+              ) : project.status ? (
+                <Button size="sm" variant="hero" className="h-10 flex-1 rounded-full" asChild>
+                  <Link to={`/projects/${project.id}`}>Explore project <ArrowUpRight className="ml-2 h-3.5 w-3.5" /></Link>
+                </Button>
               ) : (
-                <div className="flex h-10 flex-1 items-center justify-center rounded-full border border-dashed border-hairline text-xs text-muted-foreground">Currently in development</div>
+                <div className="flex h-10 flex-1 items-center justify-center rounded-full border border-dashed border-hairline text-xs text-muted-foreground">Details coming soon</div>
               )}
               {project.githubUrl && project.liveUrl && <Button size="sm" variant="hero-outline" className="h-10 rounded-full px-4" asChild><a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label={"View " + project.title + " source code"}><Github className="h-4 w-4" /></a></Button>}
             </div>
