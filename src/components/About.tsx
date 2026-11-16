@@ -103,21 +103,21 @@ const About = () => {
 
             <div className="mt-8 max-w-2xl space-y-5 text-base leading-[1.9] text-muted-foreground md:text-lg">
               <p>
-                I'm a Rwanda-based full-stack developer who enjoys solving real problems through software. I work across the front end and back end, building clean interfaces, useful features, and the systems that make applications work.
+                I’m a full-stack developer based in Kigali, Rwanda. I help turn business needs and early-stage ideas into useful digital products — combining thoughtful user experiences with the frontend, backend, and data systems that power them.
               </p>
               <p>
-                Over the past <strong className="font-semibold text-foreground">2+ years</strong>, I've learned by building and shipping projects — from management platforms for schools, hospitals, and rentals to websites, chatbots, and AI-powered experiments. I care about making technology practical, accessible, and easy to use.
+                My work spans business websites, management platforms, web applications, and AI-powered experiments. I focus on more than making something look good: I want it to work reliably, make sense to its users, and solve a real problem.
               </p>
               <p>
-                I enjoy the full journey: understanding a problem, shaping the experience, writing the code, connecting the data, and getting the product online. I'm always learning, improving my craft, and looking for meaningful problems to work on with people around the world.
+                I’m comfortable moving from an initial conversation and product requirements through interface design, implementation, database integration, and deployment. I value clear communication, ownership, and steady improvement — and I’m open to roles, client projects, and collaborations where I can contribute and keep growing.
               </p>
             </div>
 
             <div className="mt-10 grid grid-cols-3 border-y border-hairline py-6">
               {[
-                { value: "7+", label: "Projects built" },
-                { value: "2+", label: "Years learning & building" },
-                { value: "RW", label: "Building from Rwanda" },
+                { value: "7+", label: "Projects shipped" },
+                { value: "3", label: "Custom-domain websites" },
+                { value: "RW", label: "Working globally from Rwanda" },
               ].map((item, index) => (
                 <div key={item.label} className={index === 1 ? "border-x border-hairline px-4 md:px-6" : index === 2 ? "pl-4 md:pl-6" : "pr-4 md:pr-6"}>
                   <div className="text-3xl font-bold tracking-[-0.05em] md:text-4xl">{item.value}</div>
