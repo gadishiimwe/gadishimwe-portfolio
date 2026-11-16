@@ -3,47 +3,44 @@ import { BriefcaseBusiness, Building2, CalendarDays, CheckCircle2, Code2, Gradua
 const ProfessionalJourney = () => {
   const experiences = [
     {
-      title: "Full-Stack Developer (Freelance & Personal Projects)",
-      company: "Independent",
-      location: "Remote",
-      period: "2022 – Present",
+      title: "Full-Stack Developer",
+      company: "Independent & Client Projects",
+      location: "Kigali, Rwanda / Remote",
+      period: "Ongoing",
       type: "Current",
       icon: Code2,
-      description: "Building and deploying web applications with React, Node.js, PHP, and MySQL. Focused on practical digital products, thoughtful user experiences, and solving real-world problems through software.",
+      description: "Designing, building, and deploying websites and software products for practical use cases. Work spans user-facing interfaces, application logic, databases, and deployment.",
       achievements: [
-        "Developed 7+ applications across business, education, healthcare, and productivity use cases.",
-        "Deployed projects using platforms including Vercel, Netlify, and Heroku.",
-        "Built features such as authentication, database-backed workflows, CRUD operations, and responsive interfaces.",
-        "Used Git and GitHub to manage code, track changes, and share development work."
+        "Built and shipped 7+ software projects across business, education, healthcare, hospitality, and AI experiments.",
+        "Delivered websites published on custom domains, including projects in wellness, travel, and hospitality.",
+        "Worked across frontend development, backend integration, database-backed workflows, and responsive user experiences.",
+        "Open to full-stack roles, freelance projects, and collaborations with teams building useful products."
       ]
     },
     {
-      title: "Web Developer (Learning & Freelance Work)",
-      company: "Freelance",
+      title: "Software Development Intern",
+      company: "IDA Technology Rwanda",
       location: "Rwanda",
-      period: "2021 – 2022",
-      type: "Freelance",
+      period: "Internship",
+      type: "Professional experience",
       icon: BriefcaseBusiness,
-      description: "Developed practical websites and small applications while strengthening core web-development skills through independent projects and online learning.",
+      description: "Gained practical workplace experience in a technology environment, applying software development knowledge and learning through real project work and collaboration.",
       achievements: [
-        "Built personal and client websites using WordPress, HTML, CSS, and PHP.",
-        "Practiced MySQL database design and connected applications to CRUD workflows.",
-        "Worked on responsive layouts and user-friendly website experiences.",
-        "Completed online learning and certification programmes in web development."
+        "Developed practical experience in a professional technology setting.",
+        "Strengthened problem-solving, communication, and software development practices."
       ]
     },
     {
-      title: "Self-Learner (Programming Foundations)",
-      company: "Independent Learning",
+      title: "Data Entry & Digital Marketing",
+      company: "FedEx Rwanda (EHS Logistics)",
       location: "Rwanda",
-      period: "2020 – 2021",
-      type: "Learning",
-      icon: GraduationCap,
-      description: "Started the journey into software development by learning programming fundamentals, problem-solving, and the building blocks of the web through structured online study and hands-on practice.",
+      period: "Previous role",
+      type: "Professional experience",
+      icon: Building2,
+      description: "Supported operational and digital marketing activities, combining accurate information handling with practical business communication and digital content work.",
       achievements: [
-        "Earned certificates in web design, programming, and AI fundamentals.",
-        "Created foundational projects including calculators, portfolio websites, and simple applications.",
-        "Built a foundation in software development through coursework and consistent independent practice."
+        "Supported data entry and day-to-day information management.",
+        "Contributed to digital marketing activities and business-facing content."
       ]
     }
   ];
@@ -64,7 +61,7 @@ const ProfessionalJourney = () => {
             Professional <span className="gradient-hero">Journey</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            A journey shaped by curiosity, continuous learning, and building real software — from programming foundations to full-stack development.
+            A mix of independent product work and professional experience — grounded in building, contributing, and solving practical problems.
           </p>
         </div>
 
