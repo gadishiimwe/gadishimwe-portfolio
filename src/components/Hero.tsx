@@ -5,8 +5,8 @@ import TextType from "./TextType";
 
 const stats = [
   { value: "7+", label: "Projects shipped" },
-  { value: "2+", label: "Years building" },
-  { value: "4", label: "Core technologies" },
+  { value: "3", label: "Client websites" },
+  { value: "Full-stack", label: "From idea to deployment" },
 ];
 
 const stack = ["React", "Node.js", "PHP", "MySQL", "TypeScript", "Tailwind", "REST APIs", "Vercel", "Git"];
@@ -28,7 +28,7 @@ const Hero = () => {
               <span className="absolute inset-0 rounded-full bg-accent animate-ping" />
               <span className="relative w-2 h-2 rounded-full bg-accent border border-foreground" />
             </span>
-            Open to work
+            Open to opportunities
           </span>
         </div>
 
@@ -46,12 +46,12 @@ const Hero = () => {
               <TextType text={["Full-Stack Developer | React • Node.js • PHP • MySQL"]} typingSpeed={60} pauseDuration={4000} showCursor cursorCharacter="▌" />
             </div>
             <p className="text-2xl md:text-4xl leading-[1.15] tracking-tight">
-              Full-stack developer from Rwanda building{" "}
-              <span className="font-bold gradient-hero">real-world applications</span> with clean, scalable code — ready for remote teams worldwide.
+              I build digital experiences that help businesses work smarter, serve customers better, and turn promising ideas into{" "}
+              <span className="font-bold gradient-hero">working software.</span>
             </p>
           </div>
           <p className="text-muted-foreground leading-relaxed animate-rise" style={{ animationDelay: "0.35s" }}>
-            I'm a full-stack developer based in Kigali, Rwanda, with hands-on experience building and deploying real-world applications. I've completed 7+ projects, including chatbots, management systems, and digital platforms. I enjoy solving practical problems through clean, maintainable code and collaborating with remote teams worldwide.
+            Based in Kigali, Rwanda, I work across frontend, backend, databases, and practical AI integrations. I take projects from understanding the problem and shaping the user experience to building, testing, and deploying the product. I’m interested in meaningful work with teams and people who value thoughtful execution.
           </p>
         </div>
 
