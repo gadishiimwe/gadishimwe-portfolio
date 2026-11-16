@@ -112,8 +112,7 @@ const Contact = () => {
             Get In <span className="gradient-hero">Touch</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Have a project to discuss or an opportunity to share? Send me a
-            message and let’s start a conversation.
+            Looking for a developer, exploring an idea, or interested in working together? Tell me what you have in mind. I’m open to a thoughtful conversation, a project brief, or a meeting.
           </p>
         </div>
 
@@ -123,8 +122,7 @@ const Contact = () => {
               <p className="mb-2 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Contact details</p>
               <h3 className="text-2xl font-bold tracking-tight md:text-3xl">Let’s talk.</h3>
               <p className="mt-3 max-w-md text-sm leading-7 text-muted-foreground">
-                Whether it’s a project, a role, or a potential collaboration,
-                choose the easiest way to reach me. I’m always happy to hear from you.
+                Whether you’re hiring, need a website or web application, want to improve a business process, or simply see a potential fit, I’d be glad to hear from you and discuss how I could contribute.
               </p>
             </div>
 
@@ -186,9 +184,9 @@ const Contact = () => {
               <div className="mb-2 flex h-11 w-11 items-center justify-center rounded-xl bg-secondary">
                 <Send className="h-5 w-5" />
               </div>
-              <CardTitle className="text-2xl tracking-tight md:text-3xl">Send me a message</CardTitle>
+              <CardTitle className="text-2xl tracking-tight md:text-3xl">Start a conversation</CardTitle>
               <CardDescription className="max-w-md text-sm leading-relaxed">
-                Complete the form below with a few details. Your message will be sent directly to my inbox.
+                Share a little about the opportunity, project, or idea. I’ll review your message and get back to you.
               </CardDescription>
             </CardHeader>
 
