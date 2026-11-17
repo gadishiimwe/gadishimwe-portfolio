@@ -23,8 +23,8 @@ This project is built with:
 
 Gad ISHIMWE - Full-Stack Developer
 
-- **Email**: [Your email]
-- **LinkedIn**: [https://linkedin.com/in/gadishimwe](https://linkedin.com/in/gadishimwe)
+- **Email**: [gadyishimwe1@gmail.com](mailto:gadyishimwe1@gmail.com)
+- **LinkedIn**: [https://www.linkedin.com/in/gad-ishimwe/](https://linkedin.com/in/gadishimwe)
 - **GitHub**: [https://github.com/gadishimwe](https://github.com/gadishimwe)
 - **Location**: Kigali, Rwanda 🇷🇼
 
