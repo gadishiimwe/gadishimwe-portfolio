@@ -31,3 +31,14 @@ Gad ISHIMWE - Full-Stack Developer
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
+
+
+---
+
+## Developer
+
+This project was developed and is maintained by **Gad Ishimwe**, a Full-Stack Developer based in Rwanda.
+
+- **Portfolio:** https://gadishimwe.vercel.app
+- **GitHub:** https://github.com/gadishiimwe
+- **LinkedIn:** https://www.linkedin.com/in/gad-ishimwe/
